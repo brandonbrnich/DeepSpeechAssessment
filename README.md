@@ -19,3 +19,10 @@ Secondly, the tests will be conducted again after the base scorer has been train
 4. [Sirens_Noise] Noise from sirens (Low -> Medium -> High)
 
 Four EMS speech sample used: Paramedic Smith, EMT 107, EMT 101 (under the folder "audio")
+
+# SOFTWARE NEEDED
+
+The models for DeepSpeech are too large to push to github
+Once the repository is cloned, open a terminal and run the following commands:
+    wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+    wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
