@@ -7,7 +7,6 @@ from nltk.tokenize import RegexpTokenizer
 import matplotlib.pyplot as plt
 import pandas as pd
 
-google_accuracy_arr = []
 clean_deep_accuracy_arr = []
 cafe_low_deep_accuracy_arr = []
 cafe_medium_deep_accuracy_arr = []
@@ -18,17 +17,8 @@ people_high_deep_accuracy_arr = []
 sirens_low_deep_accuracy_arr = []
 sirens_medium_deep_accuracy_arr = []
 sirens_high_deep_accuracy_arr = []
-cafe_low_google_accuracy_arr = []
-cafe_medium_google_accuracy_arr = []
-cafe_high_google_accuracy_arr = []
-people_low_google_accuracy_arr = []
-people_medium_google_accuracy_arr = []
-people_high_google_accuracy_arr = []
-sirens_low_google_accuracy_arr = []
-sirens_medium_google_accuracy_arr = []
-sirens_high_google_accuracy_arr = []
 stop_words = set(stopwords.words('english'))
-# stop_words = []
+
 # convert numbers to English words for assessment purposes
 def num2words(num):
 	nums_20_90 = ['twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
@@ -195,43 +185,8 @@ class TextComp(object):
 
 if __name__ == '__main__':
     debug = False
-
-    ###############read files here##################
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Cafeteria_High_Noise_API_Result.txt", 'r') as myfile:
-        test = myfile.read().replace('\n','')
-    #first file
-	###Google speech Recognition###
-	#clean
-    with open ("No_Noise_Results/1_Paramedic_Smith_Original_google_2019.txt", 'r') as myfile:
-        google_first = myfile.read().replace('\n','')
-    #cafe-low
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Cafeteria_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_cafe_low = myfile.read().replace('\n', '')
-    #cafe-medium
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Cafeteria_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_cafe_medium = myfile.read().replace('\n', '')
-    #cafe-high
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Cafeteria_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_cafe_high = myfile.read().replace('\n', '')
-    #people-low
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_People_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_people_low = myfile.read().replace('\n', '')
-    #people-medium
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_People_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_people_medium = myfile.read().replace('\n', '')
-    #people-high
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_People_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_people_high = myfile.read().replace('\n', '')
-    #sirens-low
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Sirens_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_sirens_low = myfile.read().replace('\n', '')
-    #sirens-medium
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Sirens_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_sirens_medium = myfile.read().replace('\n', '')
-    #sirens-high
-    with open ("1_Paramedic_Smith_Noisy_API_Results/1_Paramedic_Smith_Sirens_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_first_sirens_high = myfile.read().replace('\n', '')
-	###Deepspeech Recognition###
+   	###Deepspeech Recognition###
+    # These files are from the 2019 evalution
     #clean
     with open ("No_Noise_Results/1_Paramedic_Smith_Original_deep_2019.txt", 'r') as myfile:
         latest_deep_first = myfile.read().replace('\n', '')
@@ -262,44 +217,82 @@ if __name__ == '__main__':
     #sirens-high
     with open ("1_Paramedic_Smith_Noisy_Results/1_Paramedic_Smith_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_first_sirens_high = myfile.read().replace('\n', '')
+    
     #golden script
     with open ("Golden_Transcript/1_Paramedic_Smith_Original_Transcript.txt", 'r') as myfile:
         original_first = myfile.read().replace('\n', '')
         original_first_deep = convertScript(original_first)
-
-    #fifth file
-	###Google Speech Recognition###
+    
+    #evaluating the files from new version
     #clean
-    with open ("No_Noise_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original_google_2019.txt", 'r') as myfile:
-        google_fifth = myfile.read().replace('\n','')
-	#cafe-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_cafe_low = myfile.read().replace('\n', '')
-	#people-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_people_medium = myfile.read().replace('\n', '')
-	#sirens-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_sirens_high = myfile.read().replace('\n', '')
-	#cafe-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_cafe_medium = myfile.read().replace('\n', '')
-	#people-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_people_high = myfile.read().replace('\n', '')
-	#sirens-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_sirens_low = myfile.read().replace('\n', '')
-	#cafe-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_cafe_high = myfile.read().replace('\n', '')
-	#people-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_people_low = myfile.read().replace('\n', '')
-	#sirens-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_API_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_fifth_sirens_medium = myfile.read().replace('\n', '')
+    with open ("No_Noise_Results_Updated/1_Paramedic_Smith_Original.txt", 'r') as myfile:
+        latest_deep_first_new = myfile.read().replace('\n', '')
+    #cafe-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_low_new = myfile.read().replace('\n', '')
+    #cafe-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_medium_new = myfile.read().replace('\n', '')
+    #cafe-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_high_new = myfile.read().replace('\n', '')
+    #people-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_low_new = myfile.read().replace('\n', '')
+    #people-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_medium_new = myfile.read().replace('\n', '')
+    #people-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_high_new = myfile.read().replace('\n', '')
+    #sirens-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_low_new = myfile.read().replace('\n', '')
+    #sirens-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_medium_new = myfile.read().replace('\n', '')
+    #sirens-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_high_new = myfile.read().replace('\n', '')
+    
 	###Deepspeech Recognition###
+    # new version data
+    #clean
+    with open ("No_Noise_Results_Updated/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_fifth_new = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_low_new = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_medium_new = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_high_new = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_medium_new = myfile.read().replace('\n', '')
+	#people-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_high_new = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_low_new = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_high_new = myfile.read().replace('\n', '')
+	#people-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_low_new = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_medium_new = myfile.read().replace('\n', '')
+    #golden script
+    with open ("Golden_Transcript/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original_Transcript.txt", 'r') as myfile:
+        original_fifth = myfile.read().replace('\n', '')
+        original_fifth_deep = convertScript(original_fifth)
+    
+    # old version data
     #clean
     with open ("No_Noise_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original_deep_2019.txt", 'r') as myfile:
         latest_deep_fifth = myfile.read().replace('\n', '')
@@ -330,43 +323,9 @@ if __name__ == '__main__':
 	#sirens-medium
     with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
         latest_deep_fifth_sirens_medium = myfile.read().replace('\n', '')
-    #golden script
-    with open ("Golden_Transcript/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original_Transcript.txt", 'r') as myfile:
-        original_fifth = myfile.read().replace('\n', '')
-        original_fifth_deep = convertScript(original_fifth)
-    #sixth file
-	###Google Speech Recognition###
-    #clean
-    with open ("No_Noise_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_google_2019.txt", 'r') as myfile:
-        google_sixth = myfile.read().replace('\n','')
-	#cafe-low
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_cafe_low = myfile.read().replace('\n', '')
-	#cafe-medium
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_cafe_medium = myfile.read().replace('\n', '')
-	#cafe-high
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_cafe_high = myfile.read().replace('\n', '')
-	#people-low
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_people_low = myfile.read().replace('\n', '')
-	#people-medium
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_people_medium = myfile.read().replace('\n', '')
-	#people-high
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_people_high = myfile.read().replace('\n', '')
-	#sirens-low
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_sirens_low = myfile.read().replace('\n', '')
-	#sirens-medium
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_sirens_medium = myfile.read().replace('\n', '')
-	#sirens-high
-    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_API_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_sixth_sirens_high = myfile.read().replace('\n', '')
+
 	###Deepspeech Recognition###
+    # old version
     #clean
     with open ("No_Noise_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_deep_2019.txt", 'r') as myfile:
         latest_deep_sixth = myfile.read().replace('\n', '')
@@ -401,39 +360,41 @@ if __name__ == '__main__':
     with open ("Golden_Transcript/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_Transcript.txt", 'r') as myfile:
         original_sixth = myfile.read().replace('\n', '')
         original_sixth_deep = convertScript(original_sixth)
-    #seventh file
-    ###Google Speech Recognition###
-	#clean
-    with open ("No_Noise_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_google_2019.txt", 'r') as myfile:
-        google_seventh = myfile.read().replace('\n','')
+    
+    # new version
+    #clean
+    with open ("No_Noise_Results_Updated/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_sixth_new = myfile.read().replace('\n', '')
 	#cafe-low
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_cafe_low = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_low_new = myfile.read().replace('\n', '')
 	#cafe-medium
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_cafe_medium = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_medium_new = myfile.read().replace('\n', '')
 	#cafe-high
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_cafe_high = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_high_new = myfile.read().replace('\n', '')
 	#people-low
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_people_low = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_low_new = myfile.read().replace('\n', '')
 	#people-medium
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_people_medium = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_medium_new = myfile.read().replace('\n', '')
 	#people-high
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_people_high = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_high_new = myfile.read().replace('\n', '')
 	#sirens-low
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Low_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_sirens_low = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_low_new = myfile.read().replace('\n', '')
 	#sirens-medium
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Medium_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_sirens_medium = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_medium_new = myfile.read().replace('\n', '')
 	#sirens-high
-    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_API_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_High_Noise_API_Result.txt", 'r') as myfile:
-        latest_google_seventh_sirens_high = myfile.read().replace('\n', '')
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_high_new = myfile.read().replace('\n', '')
+
 	###Deepspeech Recongition###
+    # old version
     #clean
     with open ("No_Noise_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_deep_2019.txt", 'r') as myfile:
         latest_deep_seventh = myfile.read().replace('\n', '')
@@ -468,61 +429,43 @@ if __name__ == '__main__':
     with open ("Golden_Transcript/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_Transcript.txt", 'r') as myfile:
         original_seventh = myfile.read().replace('\n', '')
         original_seventh_deep = convertScript(original_seventh)
+    
+    ###Deepspeech Recongition###
+    # new version
+    #clean
+    with open ("No_Noise_Results_Updated/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_seventh_new = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_low_new = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_medium_new = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_high_new = myfile.read().replace('\n', '')
+	#people-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_low_new = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_medium_new = myfile.read().replace('\n', '')
+	#people-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_high_new = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_low_new = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_medium_new = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_high_new = myfile.read().replace('\n', '')
 
     ######################GENERATE WER###########################
 
     #first file
-	###Google Speech Recognition###
-    #clean
-    google_stats_first = TextComp(google_first, original_first)
-    print("[google_first_2019] Word Error Rate:"+ str(google_stats_first.WER(False)))
-    print("[google_first_2019] Accuracy:"+str(google_stats_first.Accuracy()))
-    google_accuracy_arr.append(google_stats_first.Accuracy())
-    #cafe-low
-    latest_google_stats_first_cafe_low = TextComp(latest_google_first_cafe_low, original_first)
-    print("[cafe_low_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_cafe_low.WER(debug)))
-    print("[cafe_low_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_cafe_low.Accuracy()))
-    cafe_low_google_accuracy_arr.append(latest_google_stats_first_cafe_low.Accuracy())
-	#cafe-medium
-    latest_google_stats_first_cafe_medium = TextComp(latest_google_first_cafe_medium, original_first)
-    print("[cafe_medium_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_cafe_medium.WER(debug)))
-    print("[cafe_medium_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_cafe_medium.Accuracy()))
-    cafe_medium_google_accuracy_arr.append(latest_google_stats_first_cafe_medium.Accuracy())
-    #cafe-high
-    latest_google_stats_first_cafe_high = TextComp(latest_google_first_cafe_high, original_first)
-    print("[cafe_high_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_cafe_high.WER(debug)))
-    print("[cafe_high_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_cafe_high.Accuracy()))
-    cafe_high_google_accuracy_arr.append(latest_google_stats_first_cafe_high.Accuracy())
-    #people-low
-    latest_google_stats_first_people_low = TextComp(latest_google_first_people_low, original_first)
-    print("[people_low_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_people_low.WER(debug)))
-    print("[people_low_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_people_low.Accuracy()))
-    people_low_google_accuracy_arr.append(latest_google_stats_first_people_low.Accuracy())
-    #people-medium
-    latest_google_stats_first_people_medium = TextComp(latest_google_first_people_medium, original_first)
-    print("_people_medium_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_people_medium.WER(debug)))
-    print("[people_medium_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_people_medium.Accuracy()))
-    people_medium_google_accuracy_arr.append(latest_google_stats_first_people_medium.Accuracy())
-	#people-high
-    latest_google_stats_first_people_high = TextComp(latest_google_first_people_high, original_first)
-    print("[people_high_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_people_high.WER(debug)))
-    print("[people_high_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_people_high.Accuracy()))
-    people_high_google_accuracy_arr.append(latest_google_stats_first_people_high.Accuracy())
-    #sirens-low
-    latest_google_stats_first_sirens_low = TextComp(latest_google_first_sirens_low, original_first)
-    print("[sirens_low_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_sirens_low.WER(debug)))
-    print("[sirens_low_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_sirens_low.Accuracy()))
-    sirens_low_google_accuracy_arr.append(latest_google_stats_first_sirens_low.Accuracy())
-    #sirens-medium
-    latest_google_stats_first_sirens_medium = TextComp(latest_google_first_sirens_medium, original_first)
-    print("[sirens_medium_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_sirens_medium.WER(debug)))
-    print("[sirens_medium_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_sirens_medium.Accuracy()))
-    sirens_medium_google_accuracy_arr.append(latest_google_stats_first_sirens_medium.Accuracy())
-	#sirens-high
-    latest_google_stats_first_sirens_high = TextComp(latest_google_first_sirens_high, original_first)
-    print("[sirens_high_googlespeech_first_2019] Word Error Rate:"+ str(latest_google_stats_first_sirens_high.WER(debug)))
-    print("[sirens_high_googlespeech_first_2019] Accuracy:"+str(latest_google_stats_first_sirens_high.Accuracy()))
-    sirens_high_google_accuracy_arr.append(latest_google_stats_first_sirens_high.Accuracy())
 	###Deepspeech Recognition###
     #clean
     latest_deep_stats_first = TextComp(latest_deep_first, original_first_deep)
@@ -575,57 +518,6 @@ if __name__ == '__main__':
     print("[sirens_high_deepspeech_first_2019] Accuracy:"+str(latest_deep_stats_first_sirens_high.Accuracy()))
     sirens_high_deep_accuracy_arr.append(latest_deep_stats_first_sirens_high.Accuracy())
 	#fifth file
-    ###Google Speech Recognition###
-	#clean
-    google_stats_fifth = TextComp(google_fifth, original_fifth)
-    print("[google_fifth_2019] Word Error Rate:"+ str(google_stats_fifth.WER(False)))
-    print("[google_fifth_2019] Accuracy:"+str(google_stats_fifth.Accuracy()))
-    google_accuracy_arr.append(google_stats_fifth.Accuracy())
-	#cafe-low
-    latest_google_stats_fifth_cafe_low = TextComp(latest_google_fifth_cafe_low, original_fifth)
-    print("[cafe_low_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_cafe_low.WER(debug)))
-    print("[cafe_low_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_cafe_low.Accuracy()))
-    cafe_low_google_accuracy_arr.append(latest_google_stats_fifth_cafe_low.Accuracy())
-	#cafe-medium
-    latest_google_stats_fifth_cafe_medium = TextComp(latest_google_fifth_cafe_medium, original_fifth)
-    print("[cafe_medium_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_cafe_medium.WER(debug)))
-    print("[cafe_medium_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_cafe_medium.Accuracy()))
-    cafe_medium_google_accuracy_arr.append(latest_google_stats_fifth_cafe_medium.Accuracy())
-    #cafe-high
-    latest_google_stats_fifth_cafe_high = TextComp(latest_google_fifth_cafe_high, original_fifth)
-    print("[cafe_high_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_cafe_high.WER(debug)))
-    print("[cafe_high_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_cafe_high.Accuracy()))
-    cafe_high_google_accuracy_arr.append(latest_google_stats_fifth_cafe_high.Accuracy())
-    #people-low
-    latest_google_stats_fifth_people_low = TextComp(latest_google_fifth_people_low, original_fifth)
-    print("[people_low_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_people_low.WER(debug)))
-    print("[people_low_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_people_low.Accuracy()))
-    people_low_google_accuracy_arr.append(latest_google_stats_fifth_people_low.Accuracy())
-    #people-medium
-    latest_google_stats_fifth_people_medium = TextComp(latest_google_fifth_people_medium, original_fifth)
-    print("[people_medium_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_people_medium.WER(debug)))
-    print("[people_medium_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_people_medium.Accuracy()))
-    people_medium_google_accuracy_arr.append(latest_google_stats_fifth_people_medium.Accuracy())
-	#people-high
-    latest_google_stats_fifth_people_high = TextComp(latest_google_fifth_people_high, original_fifth)
-    print("[people_high_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_people_high.WER(debug)))
-    print("[people_high_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_people_high.Accuracy()))
-    people_high_google_accuracy_arr.append(latest_google_stats_fifth_people_high.Accuracy())
-    #sirens-low
-    latest_google_stats_fifth_sirens_low = TextComp(latest_google_fifth_sirens_low, original_fifth)
-    print("[sirens_low_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_sirens_low.WER(debug)))
-    print("[sirens_low_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_sirens_low.Accuracy()))
-    sirens_low_google_accuracy_arr.append(latest_google_stats_fifth_sirens_low.Accuracy())
-    #sirens-medium
-    latest_google_stats_fifth_sirens_medium = TextComp(latest_google_fifth_sirens_medium, original_fifth)
-    print("[sirens_medium_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_sirens_medium.WER(debug)))
-    print("[sirens_medium_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_sirens_medium.Accuracy()))
-    sirens_medium_google_accuracy_arr.append(latest_google_stats_fifth_sirens_medium.Accuracy())
-	#sirens-high
-    latest_google_stats_fifth_sirens_high = TextComp(latest_google_fifth_sirens_high, original_fifth)
-    print("[sirens_high_googlespeech_fifth_2019] Word Error Rate:"+ str(latest_google_stats_fifth_sirens_high.WER(debug)))
-    print("[sirens_high_googlespeech_fifth_2019] Accuracy:"+str(latest_google_stats_fifth_sirens_high.Accuracy()))
-    sirens_high_google_accuracy_arr.append(latest_google_stats_fifth_sirens_high.Accuracy())
 	###Deepspeech Recognition###
     #clean
     latest_deep_stats_fifth = TextComp(latest_deep_fifth, original_fifth_deep)
@@ -679,57 +571,6 @@ if __name__ == '__main__':
     sirens_high_deep_accuracy_arr.append(latest_deep_stats_fifth_sirens_high.Accuracy())
 
     #sixth file
-	###Google Speech Recognition###
-    #clean
-    google_stats_sixth = TextComp(google_sixth, original_sixth)
-    print("[google_sixth_2019] Word Error Rate:"+ str(google_stats_sixth.WER(False)))
-    print("[google_sixth_2019] Accuracy:"+str(google_stats_sixth.Accuracy()))
-    google_accuracy_arr.append(google_stats_sixth.Accuracy())
-	#cafe-low
-    latest_google_stats_sixth_cafe_low = TextComp(latest_google_sixth_cafe_low, original_sixth)
-    print("[cafe_low_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_cafe_low.WER(debug)))
-    print("[cafe_low_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_cafe_low.Accuracy()))
-    cafe_low_google_accuracy_arr.append(latest_google_stats_sixth_cafe_low.Accuracy())
-	#cafe-medium
-    latest_google_stats_sixth_cafe_medium = TextComp(latest_google_sixth_cafe_medium, original_sixth)
-    print("[cafe_medium_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_cafe_medium.WER(debug)))
-    print("[cafe_medium_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_cafe_medium.Accuracy()))
-    cafe_medium_google_accuracy_arr.append(latest_google_stats_sixth_cafe_medium.Accuracy())
-    #cafe-high
-    latest_google_stats_sixth_cafe_high = TextComp(latest_google_sixth_cafe_high, original_sixth)
-    print("[cafe_high_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_cafe_high.WER(debug)))
-    print("[cafe_high_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_cafe_high.Accuracy()))
-    cafe_high_google_accuracy_arr.append(latest_google_stats_sixth_cafe_high.Accuracy())
-    #people-low
-    latest_google_stats_sixth_people_low = TextComp(latest_google_sixth_people_low, original_sixth)
-    print("[people_low_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_people_low.WER(debug)))
-    print("[people_low_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_people_low.Accuracy()))
-    people_low_google_accuracy_arr.append(latest_google_stats_sixth_people_low.Accuracy())
-    #people-medium
-    latest_google_stats_sixth_people_medium = TextComp(latest_google_sixth_people_medium, original_sixth)
-    print("[people_medium_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_people_medium.WER(debug)))
-    print("[people_medium_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_people_medium.Accuracy()))
-    people_medium_google_accuracy_arr.append(latest_google_stats_sixth_people_medium.Accuracy())
-	#people-high
-    latest_google_stats_sixth_people_high = TextComp(latest_google_sixth_people_high, original_sixth)
-    print("[people_high_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_people_high.WER(debug)))
-    print("[people_high_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_people_high.Accuracy()))
-    people_high_google_accuracy_arr.append(latest_google_stats_sixth_people_high.Accuracy())
-    #sirens-low
-    latest_google_stats_sixth_sirens_low = TextComp(latest_google_sixth_sirens_low, original_sixth)
-    print("[sirens_low_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_sirens_low.WER(debug)))
-    print("[sirens_low_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_sirens_low.Accuracy()))
-    sirens_low_google_accuracy_arr.append(latest_google_stats_sixth_sirens_low.Accuracy())
-    #sirens-medium
-    latest_google_stats_sixth_sirens_medium = TextComp(latest_google_sixth_sirens_medium, original_sixth)
-    print("[sirens_medium_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_sirens_medium.WER(debug)))
-    print("[sirens_medium_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_sirens_medium.Accuracy()))
-    sirens_medium_google_accuracy_arr.append(latest_google_stats_sixth_sirens_medium.Accuracy())
-	#sirens-high
-    latest_google_stats_sixth_sirens_high = TextComp(latest_google_sixth_sirens_high, original_sixth)
-    print("[sirens_high_googlespeech_sixth_2019] Word Error Rate:"+ str(latest_google_stats_sixth_sirens_high.WER(debug)))
-    print("[sirens_high_googlespeech_sixth_2019] Accuracy:"+str(latest_google_stats_sixth_sirens_high.Accuracy()))
-    sirens_high_google_accuracy_arr.append(latest_google_stats_sixth_sirens_high.Accuracy())
 	###Deepspeech Recognition###
     #clean
     latest_deep_stats_sixth = TextComp(latest_deep_sixth, original_sixth_deep)
@@ -783,57 +624,6 @@ if __name__ == '__main__':
     sirens_high_deep_accuracy_arr.append(latest_deep_stats_sixth_sirens_high.Accuracy())
 
     #seventh file
-    ###Google Speech Recognition###
-	#clean
-    google_stats_seventh = TextComp(google_seventh, original_seventh)
-    print("[google_seventh_2019] Word Error Rate:"+ str(google_stats_seventh.WER(False)))
-    print("[google_seventh_2019] Accuracy:"+str(google_stats_seventh.Accuracy()))
-    google_accuracy_arr.append(google_stats_seventh.Accuracy())
-	#cafe-low
-    latest_google_stats_seventh_cafe_low = TextComp(latest_google_seventh_cafe_low, original_seventh)
-    print("[cafe_low_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_cafe_low.WER(debug)))
-    print("[cafe_low_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_cafe_low.Accuracy()))
-    cafe_low_google_accuracy_arr.append(latest_google_stats_seventh_cafe_low.Accuracy())
-	#cafe-medium
-    latest_google_stats_seventh_cafe_medium = TextComp(latest_google_seventh_cafe_medium, original_seventh)
-    print("[cafe_medium_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_cafe_medium.WER(debug)))
-    print("[cafe_medium_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_cafe_medium.Accuracy()))
-    cafe_medium_google_accuracy_arr.append(latest_google_stats_seventh_cafe_medium.Accuracy())
-    #cafe-high
-    latest_google_stats_seventh_cafe_high = TextComp(latest_google_seventh_cafe_high, original_seventh)
-    print("[cafe_high_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_cafe_high.WER(debug)))
-    print("[cafe_high_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_cafe_high.Accuracy()))
-    cafe_high_google_accuracy_arr.append(latest_google_stats_seventh_cafe_high.Accuracy())
-    #people-low
-    latest_google_stats_seventh_people_low = TextComp(latest_google_seventh_people_low, original_seventh)
-    print("[people_low_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_people_low.WER(debug)))
-    print("[people_low_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_people_low.Accuracy()))
-    people_low_google_accuracy_arr.append(latest_google_stats_seventh_people_low.Accuracy())
-    #people-medium
-    latest_google_stats_seventh_people_medium = TextComp(latest_google_seventh_people_medium, original_seventh)
-    print("[people_medium_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_people_medium.WER(debug)))
-    print("[people_medium_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_people_medium.Accuracy()))
-    people_medium_google_accuracy_arr.append(latest_google_stats_seventh_people_medium.Accuracy())
-	#people-high
-    latest_google_stats_seventh_people_high = TextComp(latest_google_seventh_people_high, original_seventh)
-    print("[people_high_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_people_high.WER(debug)))
-    print("[people_high_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_people_high.Accuracy()))
-    people_high_google_accuracy_arr.append(latest_google_stats_seventh_people_high.Accuracy())
-    #sirens-low
-    latest_google_stats_seventh_sirens_low = TextComp(latest_google_seventh_sirens_low, original_seventh)
-    print("[sirens_low_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_sirens_low.WER(debug)))
-    print("[sirens_low_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_sirens_low.Accuracy()))
-    sirens_low_google_accuracy_arr.append(latest_google_stats_seventh_sirens_low.Accuracy())
-    #sirens-medium
-    latest_google_stats_seventh_sirens_medium = TextComp(latest_google_seventh_sirens_medium, original_seventh)
-    print("[sirens_medium_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_sirens_medium.WER(debug)))
-    print("[sirens_medium_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_sirens_medium.Accuracy()))
-    sirens_medium_google_accuracy_arr.append(latest_google_stats_seventh_sirens_medium.Accuracy())
-	#sirens-high
-    latest_google_stats_seventh_sirens_high = TextComp(latest_google_seventh_sirens_high, original_seventh)
-    print("[sirens_high_googlespeech_seventh_2019] Word Error Rate:"+ str(latest_google_stats_seventh_sirens_high.WER(debug)))
-    print("[sirens_high_googlespeech_seventh_2019] Accuracy:"+str(latest_google_stats_seventh_sirens_high.Accuracy()))
-    sirens_high_google_accuracy_arr.append(latest_google_stats_seventh_sirens_high.Accuracy())
 	###Deepspeech Recognition###
     #clean
     latest_deep_stats_seventh = TextComp(latest_deep_seventh, original_seventh_deep)
@@ -885,19 +675,6 @@ if __name__ == '__main__':
     print("[sirens_high_deepspeech_seventh_2019] Word Error Rate:"+ str(latest_deep_stats_seventh_sirens_high.WER(debug)))
     print("[sirens_high_deepspeech_seventh_2019] Accuracy:"+str(latest_deep_stats_seventh_sirens_high.Accuracy()))
     sirens_high_deep_accuracy_arr.append(latest_deep_stats_seventh_sirens_high.Accuracy())
-
-	#check if every array has the rigt number of elements
-    # print(google_accuracy_arr)
-    # print(clean_deep_accuracy_arr)
-    # print(cafe_low_deep_accuracy_arr)
-    # print(cafe_medium_deep_accuracy_arr)
-    # print(cafe_high_deep_accuracy_arr)
-    # print(people_low_deep_accuracy_arr)
-    # print(people_medium_deep_accuracy_arr)
-    # print(people_high_deep_accuracy_arr)
-    # print(sirens_low_deep_accuracy_arr)
-    # print(sirens_medium_deep_accuracy_arr)
-    # print(sirens_high_deep_accuracy_arr)
 
 	#cafe data comparison arrays
     cafe_arr_first = []
