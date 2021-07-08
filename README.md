@@ -7,8 +7,11 @@ The original code can be found at: https://github.com/Terry0923/Speech-Recogniti
 # SPEECH RECOGNITION ASSESSMENT
 
 This is the assessment for Mozilla DeepSpeech v0.9.3
+
 There will be mutliple tests done in order to create a proper assessment
+
 The first of these will be to get an intial baseline of DeepSpeech Performance
+
 Secondly, the tests will be conducted again after the base scorer has been trained given the EMS ontology that is available
 
 ## NOISE PROFILE
@@ -23,6 +26,9 @@ Four EMS speech sample used: Paramedic Smith, EMT 107, EMT 101 (under the folder
 # SOFTWARE NEEDED
 
 The models for DeepSpeech are too large to push to github
+
 Once the repository is cloned, open a terminal and run the following commands:
+
     wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+
     wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
