@@ -1,19 +1,15 @@
+# REFERENCES
+
+This code was initially used in 2019 in order to compare DeepSpeech v0.6 to the Google Speech Recognition tool.
+
+The original code can be found at: https://github.com/Terry0923/Speech-Recognition-Assessment
+
 # SPEECH RECOGNITION ASSESSMENT
 
-This is the assessment for Google Speech Recognition vs Deepspeech Recognition
-
-# FOLDERS EXPLANATION
-
-WER_generator_noise.py: code that generates the assessments
-
-API_Results: google speech recognition text results
-Results:  Deepspeech recongition text results
-
-audio: audio files used
-
-Golden_Transcript: correct transcription for audio files
-
-No_Noise_Results: google speech recognition performance without noisy background
+This is the assessment for Mozilla DeepSpeech v0.9.3
+There will be mutliple tests done in order to create a proper assessment
+The first of these will be to get an intial baseline of DeepSpeech Performance
+Secondly, the tests will be conducted again after the base scorer has been trained given the EMS ontology that is available
 
 ## NOISE PROFILE
 
@@ -23,39 +19,3 @@ No_Noise_Results: google speech recognition performance without noisy background
 4. [Sirens_Noise] Noise from sirens (Low -> Medium -> High)
 
 Four EMS speech sample used: Paramedic Smith, EMT 107, EMT 101 (under the folder "audio")
-
-## GRAPH EXPLANATION
-
-### performance under different noise profiles
-
-Clean, Low Noise, Medium Noise, High Noise denote the strength of the noise in the background
-
-(Google) or (Mozilla) denote the speech recognition technique used
-
-For example:
-
-Clean (Google): Google speech recognition performance without noisy background
-
-Clean (Mozilla): Mozilla Deepspeech Recognition performance without noisy background
-
-#### cafe.png
-
-This graph shows the speech recognition performance for both google speech recognition and deepspeech recogition assessed in a cafeteria.
-
-#### ppl.png
-
-This graph shows the speech recognition performance for both google speech recognition and deepspeech recogition assessed when people are talking in the background
-
-#### sirens.png
-
-This graph shows the speech recognition performance for both google speech recognition and deepspeech recogition assessed with sirens noise
-
-### Overall Performance assessment
-
-#### deep_ave.png
-
-This graph shows the performance of DEEPSPEECH under different noise profiles
-
-#### compare.png
-
-This graph shows the comparison of performances between Google Speech Recognition and Deepspeech Recognition
