@@ -32,3 +32,5 @@ Once the repository is cloned, open a terminal and run the following commands:
     wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
 
     wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
+
+The scorer that was trained using the medical terms we possess is in the repository and will appear if cloned
