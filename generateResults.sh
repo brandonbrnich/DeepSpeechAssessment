@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#this is shell script in order to generate all the results for DeepSpeech and GoogleCloud API
+#this is shell script in order to generate all the results for DeepSpeech
 #run this shell script when updates occur to either ASR technologies to get updated results
 
 # basic command: deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/2830-3980-0043.wav
