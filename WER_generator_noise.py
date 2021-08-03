@@ -184,8 +184,16 @@ class TextComp(object):
 
 
 if __name__ == '__main__':
+
     debug = False
-   	###Deepspeech Recognition###
+
+    # File 1
+
+    #golden script
+    with open ("Golden_Transcript/1_Paramedic_Smith_Original_Transcript.txt", 'r') as myfile:
+        original_first = myfile.read().replace('\n', '')
+        original_first_deep = convertScript(original_first)
+    
     # These files are from the 2019 evalution
     #clean
     with open ("No_Noise_Results/1_Paramedic_Smith_Original_deep_2019.txt", 'r') as myfile:
@@ -217,11 +225,6 @@ if __name__ == '__main__':
     #sirens-high
     with open ("1_Paramedic_Smith_Noisy_Results/1_Paramedic_Smith_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_first_sirens_high = myfile.read().replace('\n', '')
-    
-    #golden script
-    with open ("Golden_Transcript/1_Paramedic_Smith_Original_Transcript.txt", 'r') as myfile:
-        original_first = myfile.read().replace('\n', '')
-        original_first_deep = convertScript(original_first)
     
     #evaluating the files from new version
     #clean
@@ -255,38 +258,41 @@ if __name__ == '__main__':
     with open ("1_Paramedic_Smith_Noisy_Results_NewVersion/1_Paramedic_Smith_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_first_sirens_high_new = myfile.read().replace('\n', '')
     
-	###Deepspeech Recognition###
-    # new version data
+    #audio files transcibed using the new model but with trained scorer
     #clean
-    with open ("No_Noise_Results_Updated/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original.txt", 'r') as myfile:
-        latest_deep_fifth_new = myfile.read().replace('\n', '')
-	#cafe-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_cafe_low_new = myfile.read().replace('\n', '')
-	#people-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_people_medium_new = myfile.read().replace('\n', '')
-	#sirens-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_sirens_high_new = myfile.read().replace('\n', '')
-	#cafe-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_cafe_medium_new = myfile.read().replace('\n', '')
-	#people-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_High_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_people_high_new = myfile.read().replace('\n', '')
-	#sirens-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_sirens_low_new = myfile.read().replace('\n', '')
-	#cafe-high
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_cafe_high_new = myfile.read().replace('\n', '')
-	#people-low
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Low_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_people_low_new = myfile.read().replace('\n', '')
-	#sirens-medium
-    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
-        latest_deep_fifth_sirens_medium_new = myfile.read().replace('\n', '')
+    with open ("No_Noise_Results_Improved/1_Paramedic_Smith_Original.txt", 'r') as myfile:
+        latest_deep_first_improved = myfile.read().replace('\n', '')
+    #cafe-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_low_improved = myfile.read().replace('\n', '')
+    #cafe-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_medium_improved = myfile.read().replace('\n', '')
+    #cafe-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_cafe_high_improved = myfile.read().replace('\n', '')
+    #people-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_low_improved = myfile.read().replace('\n', '')
+    #people-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_medium_improved = myfile.read().replace('\n', '')
+    #people-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_people_high_improved = myfile.read().replace('\n', '')
+    #sirens-low
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_low_improved = myfile.read().replace('\n', '')
+    #sirens-medium
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_medium_improved = myfile.read().replace('\n', '')
+    #sirens-high
+    with open ("1_Paramedic_Smith_Noisy_Results_NewVersion_Improved/1_Paramedic_Smith_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_first_sirens_high_improved = myfile.read().replace('\n', '')
+    
+	###Deepspeech Recognition###
+    ###File 2###
+
     #golden script
     with open ("Golden_Transcript/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original_Transcript.txt", 'r') as myfile:
         original_fifth = myfile.read().replace('\n', '')
@@ -323,8 +329,79 @@ if __name__ == '__main__':
 	#sirens-medium
     with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Noisy_Results/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
         latest_deep_fifth_sirens_medium = myfile.read().replace('\n', '')
+    
+    # new version data
+    #clean
+    with open ("No_Noise_Results_Updated/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_fifth_new = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_low_new = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_medium_new = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_high_new = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_medium_new = myfile.read().replace('\n', '')
+	#people-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_high_new = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_low_new = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_high_new = myfile.read().replace('\n', '')
+	#people-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_low_new = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_medium_new = myfile.read().replace('\n', '')
+    
+    # new version model with trained scorer
+    #clean
+    with open ("No_Noise_Results_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_fifth_improved = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_low_improved = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_medium_improved = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_high_improved = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_medium_improved = myfile.read().replace('\n', '')
+	#people-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_high_improved = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_low_improved = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_cafe_high_improved = myfile.read().replace('\n', '')
+	#people-low
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_people_low_improved = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("5_McLaren_EMT_Radio_Call_Alpha_107_Recording_Noisy_Results_NewVersion_Improved/5_McLaren_EMT_Radio_Call_Alpha_107_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_fifth_sirens_medium_improved = myfile.read().replace('\n', '')
 
 	###Deepspeech Recognition###
+    ###File 3###
+
+    #golden script
+    with open ("Golden_Transcript/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_Transcript.txt", 'r') as myfile:
+        original_sixth = myfile.read().replace('\n', '')
+        original_sixth_deep = convertScript(original_sixth)
+
     # old version
     #clean
     with open ("No_Noise_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_deep_2019.txt", 'r') as myfile:
@@ -356,10 +433,6 @@ if __name__ == '__main__':
 	#sirens-high
     with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Noisy_Results/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_sixth_sirens_high = myfile.read().replace('\n', '')
-    #golden script
-    with open ("Golden_Transcript/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original_Transcript.txt", 'r') as myfile:
-        original_sixth = myfile.read().replace('\n', '')
-        original_sixth_deep = convertScript(original_sixth)
     
     # new version
     #clean
@@ -392,8 +465,47 @@ if __name__ == '__main__':
 	#sirens-high
     with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_sixth_sirens_high_new = myfile.read().replace('\n', '')
+    
+    # new version with improved scorer
+    #clean
+    with open ("No_Noise_Results_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_sixth_improved = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_low_improved = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_medium_improved = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_cafe_high_improved = myfile.read().replace('\n', '')
+	#people-low
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_low_improved = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_medium_improved = myfile.read().replace('\n', '')
+	#people-high
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_people_high_improved = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_low_improved = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_medium_improved = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("6_McLaren_EMT_Radio_Call_Alpha_117_Recording_Noisy_Results_NewVersion_Improved/6_McLaren_EMT_Radio_Call_Alpha_117_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_sixth_sirens_high_improved = myfile.read().replace('\n', '')
 
 	###Deepspeech Recongition###
+    ###File 4###
+
+    #golden script
+    with open ("Golden_Transcript/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_Transcript.txt", 'r') as myfile:
+        original_seventh = myfile.read().replace('\n', '')
+        original_seventh_deep = convertScript(original_seventh)
+    
     # old version
     #clean
     with open ("No_Noise_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_deep_2019.txt", 'r') as myfile:
@@ -425,10 +537,6 @@ if __name__ == '__main__':
 	#sirens-high
     with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Noisy_Results/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_seventh_sirens_high = myfile.read().replace('\n', '')
-    #golden script
-    with open ("Golden_Transcript/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original_Transcript.txt", 'r') as myfile:
-        original_seventh = myfile.read().replace('\n', '')
-        original_seventh_deep = convertScript(original_seventh)
     
     ###Deepspeech Recongition###
     # new version
@@ -462,6 +570,38 @@ if __name__ == '__main__':
 	#sirens-high
     with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
         latest_deep_seventh_sirens_high_new = myfile.read().replace('\n', '')
+    
+    # new version with improved scorer
+    #clean
+    with open ("No_Noise_Results_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Original.txt", 'r') as myfile:
+        latest_deep_seventh_improved = myfile.read().replace('\n', '')
+	#cafe-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_low_improved = myfile.read().replace('\n', '')
+	#cafe-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_medium_improved = myfile.read().replace('\n', '')
+	#cafe-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Cafeteria_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_cafe_high_improved = myfile.read().replace('\n', '')
+	#people-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_low_improved = myfile.read().replace('\n', '')
+	#people-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_medium_improved = myfile.read().replace('\n', '')
+	#people-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_People_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_people_high_improved = myfile.read().replace('\n', '')
+	#sirens-low
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Low_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_low_improved = myfile.read().replace('\n', '')
+	#sirens-medium
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_Medium_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_medium_improved = myfile.read().replace('\n', '')
+	#sirens-high
+    with open ("7_McLaren_EMT_Radio_Call_Alpha_101_Recording_Noisy_Results_NewVersion_Improved/7_McLaren_EMT_Radio_Call_Alpha_101_Rerecording_Sirens_High_Noise.txt", 'r') as myfile:
+        latest_deep_seventh_sirens_high_improved = myfile.read().replace('\n', '')
 
     ######################GENERATE WER###########################
 
