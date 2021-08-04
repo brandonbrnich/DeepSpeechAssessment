@@ -1154,210 +1154,185 @@ if __name__ == '__main__':
     labels = ('Clean (Old Mozilla)','Clean (New Mozilla)', 'Low Noise (Old Mozilla)','Low Noise (New Mozilla)', 'Medium Noise (Old Mozilla)','Medium Noise (New Mozilla)', 'High Noise (Old Mozilla)','High Noise (New Mozilla)')
 
     labels_compare = ('Clean', 'Low Noise', 'Medium Noise', 'High Noise')
+
 	#average accuracy under different noise arrays
+    #want to look at the average for the old and new versions
 
-    clean_ave = 0
+    clean_ave_old = 0
+    clean_ave_new = 0
     for val in clean_deep_accuracy_arr:
-    	clean_ave += val
-    clean_ave = clean_ave/len(clean_deep_accuracy_arr)
+        if (val%2) == 0:
+    	    clean_ave_old += val
+        else:
+            clean_ave_new += val
+    clean_ave_old = clean_ave_old/(len(clean_deep_accuracy_arr)/2)
+    clean_ave_new = clean_ave_new/(len(clean_deep_accuracy_arr)/2)
 
-    cafe_low_ave = 0
+    cafe_low_ave_old = 0
+    cafe_low_ave_new = 0
     for val in cafe_low_deep_accuracy_arr:
-    	cafe_low_ave += val
-    cafe_low_ave = cafe_low_ave/len(cafe_low_deep_accuracy_arr)
+        if (val%2) == 0:
+    	    cafe_low_ave_old += val
+        else:
+            cafe_low_ave_new += val
+    cafe_low_ave_old = cafe_low_ave_old/(len(cafe_low_deep_accuracy_arr)/2)
+    cafe_low_ave_new = cafe_low_ave_new/(len(cafe_low_deep_accuracy_arr)/2)
 
-    people_low_ave = 0
+    people_low_ave_old = 0
+    people_low_ave_new = 0
     for val in people_low_deep_accuracy_arr:
-    	people_low_ave += val
-    people_low_ave = people_low_ave/len(people_low_deep_accuracy_arr)
+        if (val%2) == 0:
+    	    people_low_ave_old += val
+        else:
+            people_low_ave_new += val
+    people_low_ave_old = people_low_ave_old/(len(people_low_deep_accuracy_arr)/2)
+    people_low_ave_new = people_low_ave_new/(len(people_low_deep_accuracy_arr)/2)
 
-    sirens_low_ave = 0
+    sirens_low_ave_old = 0
+    sirens_low_ave_new = 0
     for val in sirens_low_deep_accuracy_arr:
-    	sirens_low_ave += val
-    sirens_low_ave = sirens_low_ave/len(sirens_low_deep_accuracy_arr)
+        if (val%2) == 0:
+    	    sirens_low_ave_old += val
+        else:
+            sirens_low_ave_new += val
+    sirens_low_ave_old = sirens_low_ave_old/(len(sirens_low_deep_accuracy_arr)/2)
+    sirens_low_ave_new = sirens_low_ave_new/(len(sirens_low_deep_accuracy_arr)/2)
 
-    cafe_medium_ave = 0
+    cafe_medium_ave_old = 0
+    cafe_medium_ave_new = 0
     for val in cafe_medium_deep_accuracy_arr:
-    	cafe_medium_ave += val
-    cafe_medium_ave = cafe_medium_ave/len(cafe_medium_deep_accuracy_arr)
+    	if (val%2) == 0:
+    	    cafe_medium_ave_old += val
+        else:
+            cafe_medium_ave_new += val
+    cafe_medium_ave_old = cafe_medium_ave_old/(len(cafe_medium_deep_accuracy_arr)/2)
+    cafe_medium_ave_new = cafe_medium_ave_new/(len(cafe_medium_deep_accuracy_arr)/2)
 
-    people_medium_ave = 0
+    people_medium_ave_old = 0
+    people_medium_ave_new = 0
     for val in people_medium_deep_accuracy_arr:
-    	people_medium_ave += val
-    people_medium_ave = people_medium_ave/len(people_medium_deep_accuracy_arr)
+    	if (val%2) == 0:
+    	    people_medium_ave_old += val
+        else:
+            people_medium_ave_new += val
+    people_medium_ave_old = people_medium_ave_old/(len(people_medium_deep_accuracy_arr)/2)
+    people_medium_ave_new = people_medium_ave_new/(len(people_medium_deep_accuracy_arr)/2)
 
-    sirens_medium_ave = 0
+    sirens_medium_ave_old = 0
+    sirens_medium_ave_new = 0
     for val in sirens_medium_deep_accuracy_arr:
-    	sirens_medium_ave += val
-    sirens_medium_ave = sirens_medium_ave/len(sirens_medium_deep_accuracy_arr)
+    	if (val%2) == 0:
+    	    sirens_medium_ave_old += val
+        else:
+            sirens_medium_ave_new += val
+    sirens_medium_ave_old = sirens_medium_ave_old/(len(sirens_medium_deep_accuracy_arr)/2)
+    sirens_medium_ave_new = sirens_medium_ave_new/(len(sirens_medium_deep_accuracy_arr)/2)
 
-    cafe_high_ave = 0
+    cafe_high_ave_old = 0
+    cafe_high_ave_new = 0
     for val in cafe_high_deep_accuracy_arr:
-    	cafe_high_ave += val
-    cafe_high_ave = cafe_high_ave/len(cafe_high_deep_accuracy_arr)
+        if (val%2) == 0:
+            cafe_high_ave_old += val
+        else:
+            cafe_high_ave_new += val
+    cafe_high_ave_old = cafe_high_ave_old/(len(cafe_high_deep_accuracy_arr)/2)
+    cafe_high_ave_new = cafe_high_ave_new/(len(cafe_high_deep_accuracy_arr)/2)
 
-    people_high_ave = 0
+    people_high_ave_old = 0
+    people_high_ave_new = 0
     for val in people_high_deep_accuracy_arr:
-    	people_high_ave += val
-    people_high_ave = people_high_ave/len(people_high_deep_accuracy_arr)
+        if (val%2) == 0:
+            people_high_ave_old += val
+        else:
+            people_high_ave_new += val
+    people_high_ave_old = people_high_ave_old/(len(people_high_deep_accuracy_arr)/2)
+    people_high_ave_new = people_high_ave_new/(len(people_high_deep_accuracy_arr)/2)
 
-    sirens_high_ave = 0
+    sirens_high_ave_old = 0
+    sirens_high_ave_new = 0
     for val in sirens_high_deep_accuracy_arr:
-    	sirens_high_ave += val
-    sirens_high_ave = sirens_high_ave/len(sirens_high_deep_accuracy_arr)
+        if (val%2) == 0:
+            sirens_high_ave_old += val
+        else:
+            sirens_high_ave_new += val
+    sirens_high_ave_old = sirens_high_ave_old/(len(sirens_high_deep_accuracy_arr)/2)
+    sirens_high_ave_new = sirens_high_ave_new/(len(sirens_high_deep_accuracy_arr)/2)
 
-    clean_arr = []
-    clean_arr.append(clean_ave)
-    clean_arr.append(clean_ave)
-    clean_arr.append(clean_ave)
+    clean_arr_old = []
+    clean_arr_old.append(clean_ave_old)
+    clean_arr_old.append(clean_ave_old)
+    clean_arr_old.append(clean_ave_old)
 
-    low_arr = []
-    low_arr.append(cafe_low_ave)
-    low_arr.append(people_low_ave)
-    low_arr.append(sirens_low_ave)
+    clean_arr_new = []
+    clean_arr_new.append(clean_ave_new)
+    clean_arr_new.append(clean_ave_new)
+    clean_arr_new.append(clean_ave_new)
 
-    medium_arr = []
-    medium_arr.append(cafe_medium_ave)
-    medium_arr.append(people_medium_ave)
-    medium_arr.append(sirens_medium_ave)
+    low_arr_old = []
+    low_arr_old.append(cafe_low_ave_old)
+    low_arr_old.append(people_low_ave_old)
+    low_arr_old.append(sirens_low_ave_old)
 
-    high_arr = []
-    high_arr.append(cafe_high_ave)
-    high_arr.append(people_high_ave)
-    high_arr.append(sirens_high_ave)
+    low_arr_new = []
+    low_arr_new.append(cafe_low_ave_new)
+    low_arr_new.append(people_low_ave_new)
+    low_arr_new.append(sirens_low_ave_new)
 
-    #Comparing Google Speech Recognition with Deepspeech Recognition
+    medium_arr_old = []
+    medium_arr_old.append(cafe_medium_ave_old)
+    medium_arr_old.append(people_medium_ave_old)
+    medium_arr_old.append(sirens_medium_ave_old)
 
-    google_speech_per = []
-    deep_speech_per = []
+    medium_arr_new = []
+    medium_arr_new.append(cafe_medium_ave_new)
+    medium_arr_new.append(people_medium_ave_new)
+    medium_arr_new.append(sirens_medium_ave_new)
 
-    google_clean_sum = 0
-    for val in google_accuracy_arr:
-	    google_clean_sum += val
-    google_clean_ave = google_clean_sum / len(google_accuracy_arr)
+    high_arr_old = []
+    high_arr_old.append(cafe_high_ave_old)
+    high_arr_old.append(people_high_ave_old)
+    high_arr_old.append(sirens_high_ave_old)
 
-    deep_clean_sum = 0
-    for val in clean_deep_accuracy_arr:
-        deep_clean_sum += val
-    deep_clean_ave = deep_clean_sum / len(clean_deep_accuracy_arr)
+    high_arr_new = []
+    high_arr_new.append(cafe_high_ave_new)
+    high_arr_new.append(people_high_ave_new)
+    high_arr_new.append(sirens_high_ave_new)
 
-	#low ave for both google and deep
-    google_low_sum = 0
-    deep_low_sum = 0
-    cafe_low_deep_sum = 0
-    cafe_low_google_sum = 0
-    for v1, v2 in zip(cafe_low_deep_accuracy_arr, cafe_low_google_accuracy_arr):
-        cafe_low_deep_sum += v1
-        cafe_low_google_sum += v2
-    cafe_low_deep_ave = cafe_low_deep_sum / len(cafe_low_deep_accuracy_arr)
-    cafe_low_google_ave = cafe_low_google_sum / len(cafe_low_google_accuracy_arr)
-    google_low_sum += cafe_low_google_ave
-    deep_low_sum += cafe_low_deep_ave
+    #Comparing the different version of DeepSpeech
 
-    people_low_deep_sum = 0
-    people_low_google_sum = 0
-    for v1, v2 in zip(people_low_deep_accuracy_arr, people_low_google_accuracy_arr):
-        people_low_deep_sum += v1
-        people_low_google_sum += v2
-    people_low_deep_ave = people_low_deep_sum / len(people_low_deep_accuracy_arr)
-    people_low_google_ave = people_low_google_sum / len(people_low_google_accuracy_arr)
-    google_low_sum += people_low_google_ave
-    deep_low_sum += people_low_deep_ave
+    deep_speech_per_old = []
+    deep_speech_per_new = []
 
-    sirens_low_deep_sum = 0
-    sirens_low_google_sum = 0
-    for v1, v2 in zip(sirens_low_deep_accuracy_arr, sirens_low_google_accuracy_arr):
-        sirens_low_deep_sum += v1
-        sirens_low_google_sum += v2
-    sirens_low_deep_ave = sirens_low_deep_sum / len(sirens_low_deep_accuracy_arr)
-    sirens_low_google_ave = sirens_low_google_sum / len(sirens_low_google_accuracy_arr)
-    google_low_sum += sirens_low_google_ave
-    deep_low_sum += sirens_low_deep_ave
+	#low ave for both deepspeech versions
+    deep_low_sum_old = cafe_low_ave_old + people_low_ave_old + sirens_low_ave_old
+    deep_low_sum_new = cafe_low_ave_new + people_low_ave_new + sirens_low_ave_new
 
-    google_low_ave = google_low_sum / 3
-    deep_low_ave = deep_low_sum / 3
+    deep_low_ave_old = deep_low_sum_old / 3
+    deep_low_ave_new = deep_low_sum_new / 3
 
 	#medium ave for both google and deep
-    google_medium_sum = 0
-    deep_medium_sum = 0
-    cafe_medium_deep_sum = 0
-    cafe_medium_google_sum = 0
-    for v1, v2 in zip(cafe_medium_deep_accuracy_arr, cafe_medium_google_accuracy_arr):
-        cafe_medium_deep_sum += v1
-        cafe_medium_google_sum += v2
-    cafe_medium_deep_ave = cafe_medium_deep_sum / len(cafe_medium_deep_accuracy_arr)
-    cafe_medium_google_ave = cafe_medium_google_sum / len(cafe_medium_google_accuracy_arr)
-    google_medium_sum += cafe_medium_google_ave
-    deep_medium_sum += cafe_medium_deep_ave
+    deep_medium_sum_old = cafe_medium_ave_old + people_medium_ave_old + sirens_medium_ave_old
+    deep_medium_sum_new = cafe_medium_ave_new + people_medium_ave_new + sirens_medium_ave_new
 
-    people_medium_deep_sum = 0
-    people_medium_google_sum = 0
-    for v1, v2 in zip(people_medium_deep_accuracy_arr, people_medium_google_accuracy_arr):
-        people_medium_deep_sum += v1
-        people_medium_google_sum += v2
-    people_medium_deep_ave = people_medium_deep_sum / len(people_medium_deep_accuracy_arr)
-    people_medium_google_ave = people_medium_google_sum / len(people_medium_google_accuracy_arr)
-    google_medium_sum += people_medium_google_ave
-    deep_medium_sum += people_medium_deep_ave
-
-    sirens_medium_deep_sum = 0
-    sirens_medium_google_sum = 0
-    for v1, v2 in zip(sirens_medium_deep_accuracy_arr, sirens_medium_google_accuracy_arr):
-        sirens_medium_deep_sum += v1
-        sirens_medium_google_sum += v2
-    sirens_medium_deep_ave = sirens_medium_deep_sum / len(sirens_medium_deep_accuracy_arr)
-    sirens_medium_google_ave = sirens_medium_google_sum / len(sirens_medium_google_accuracy_arr)
-    google_medium_sum += sirens_medium_google_ave
-    deep_medium_sum += sirens_medium_deep_ave
-
-    google_medium_ave = google_medium_sum / 3
-    deep_medium_ave = deep_medium_sum / 3
+    deep_medium_ave_old = deep_medium_sum_old / 3
+    deep_medium_ave_new = deep_medium_sum_new / 3
 
 	#high ave for both google and deep
-    google_high_sum = 0
-    deep_high_sum = 0
-    cafe_high_deep_sum = 0
-    cafe_high_google_sum = 0
-    for v1, v2 in zip(cafe_high_deep_accuracy_arr, cafe_high_google_accuracy_arr):
-        cafe_high_deep_sum += v1
-        cafe_high_google_sum += v2
-    cafe_high_deep_ave = cafe_high_deep_sum / len(cafe_high_deep_accuracy_arr)
-    cafe_high_google_ave = cafe_high_google_sum / len(cafe_high_google_accuracy_arr)
-    google_high_sum += cafe_high_google_ave
-    deep_high_sum += cafe_high_deep_ave
+    deep_high_sum_old = cafe_high_ave_old + people_high_ave_old + sirens_high_ave_old
+    deep_high_sum_new = cafe_high_ave_new + people_high_ave_new + sirens_high_ave_new
 
-    people_high_deep_sum = 0
-    people_high_google_sum = 0
-    for v1, v2 in zip(people_high_deep_accuracy_arr, people_high_google_accuracy_arr):
-        people_high_deep_sum += v1
-        people_high_google_sum += v2
-    people_high_deep_ave = people_high_deep_sum / len(people_high_deep_accuracy_arr)
-    people_high_google_ave = people_high_google_sum / len(people_high_google_accuracy_arr)
-    google_high_sum += people_high_google_ave
-    deep_high_sum += people_high_deep_ave
+    deep_high_ave_old = deep_high_sum_old / 3
+    deep_high_ave_new = deep_high_sum_new / 3
 
-    sirens_high_deep_sum = 0
-    sirens_high_google_sum = 0
-    for v1, v2 in zip(sirens_high_deep_accuracy_arr, sirens_high_google_accuracy_arr):
-        sirens_high_deep_sum += v1
-        sirens_high_google_sum += v2
-    sirens_high_deep_ave = sirens_high_deep_sum / len(sirens_high_deep_accuracy_arr)
-    sirens_high_google_ave = sirens_high_google_sum / len(sirens_high_google_accuracy_arr)
-    google_high_sum += sirens_high_google_ave
-    deep_high_sum += sirens_high_deep_ave
+    deep_speech_per_old.append(clean_ave_old)
+    deep_speech_per_old.append(deep_low_ave_old)
+    deep_speech_per_old.append(deep_medium_ave_old)
+    deep_speech_per_old.append(deep_high_ave_old)
 
-    google_high_ave = google_high_sum / 3
-    deep_high_ave = deep_high_sum / 3
-
-    google_speech_per.append(google_clean_ave)
-    google_speech_per.append(google_low_ave)
-    google_speech_per.append(google_medium_ave)
-    google_speech_per.append(google_high_ave)
-
-    deep_speech_per.append(deep_clean_ave)
-    deep_speech_per.append(deep_low_ave)
-    deep_speech_per.append(deep_medium_ave)
-    deep_speech_per.append(deep_high_ave)
+    deep_speech_per_new.append(clean_ave_new)
+    deep_speech_per_new.append(deep_low_ave_new)
+    deep_speech_per_new.append(deep_medium_ave_new)
+    deep_speech_per_new.append(deep_high_ave_new)
 
 	#visualization for cafeteria
     df = pd.DataFrame(np.c_[cafe_arr_first,cafe_arr_second,cafe_arr_third,cafe_arr_fourth], index=labels, columns=['Paramedic Smith','EMT 107','EMT 117','EMT 101'])
@@ -1395,24 +1370,32 @@ if __name__ == '__main__':
     fig.set_size_inches(18.5, 10.5)
     fig.savefig('siren.png', dpi=100)
 
-
-
-	#visualiczation for Average accyracy under dfferent noise profiles
-    df = pd.DataFrame(np.c_[clean_arr,low_arr,medium_arr,high_arr], index = labels_ave, columns = ['Clean','Low Noise','Medium Noise','High Noise'])
+	#visualiczation for Average accuracy under dfferent noise profiles
+    df = pd.DataFrame(np.c_[clean_arr_old,low_arr_old,medium_arr_old,high_arr_old], index = labels_ave, columns = ['Clean','Low Noise','Medium Noise','High Noise'])
     ax = df.plot.bar()
     # ax.set_xlabel("audio file")
     ax.set_ylabel("Accuracy")
     plt.xticks(rotation=360)
-    plt.suptitle("Mozilla Deepspeech Recognition Performance under different noise profiles")
+    plt.suptitle("Mozilla Deepspeech Recognition v0.6 Performance under different noise profiles")
+    fig = plt.gcf()
+    fig.savefig('deep_ave.png', dpi=100)
+
+    #visualiczation for Average accuracy under dfferent noise profiles
+    df = pd.DataFrame(np.c_[clean_arr_new,low_arr_new,medium_arr_new,high_arr_new], index = labels_ave, columns = ['Clean','Low Noise','Medium Noise','High Noise'])
+    ax = df.plot.bar()
+    # ax.set_xlabel("audio file")
+    ax.set_ylabel("Accuracy")
+    plt.xticks(rotation=360)
+    plt.suptitle("Mozilla Deepspeech Recognition v0.9 Performance under different noise profiles")
     fig = plt.gcf()
     fig.savefig('deep_ave.png', dpi=100)
 
 	#visualization for Average performance for google speech and deepspeech
-    df = pd.DataFrame(np.c_[google_speech_per, deep_speech_per], index = labels_compare, columns = ['Google', 'Deepspeech'])
+    df = pd.DataFrame(np.c_[deep_speech_per_old, deep_speech_per_new], index = labels_compare, columns = ['V0.6', 'v0.9'])
     ax = df.plot.bar()
     # ax.set_xlabel("audio file")
     ax.set_ylabel("Accuracy")
     plt.xticks(rotation=360)
-    plt.suptitle("Google Speech Recongition VS. Deepspeech Recognition")
+    plt.suptitle("Older DeepSpeech Recognition VS. new Deepspeech Recognition")
     fig = plt.gcf()
     fig.savefig('compare.png', dpi=100)
