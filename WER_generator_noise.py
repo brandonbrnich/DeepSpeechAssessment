@@ -800,6 +800,97 @@ if __name__ == '__main__':
           str(latest_deep_stats_first_sirens_high_new.Accuracy()))
     sirens_high_deep_accuracy_arr.append(
         latest_deep_stats_first_sirens_high_new.Accuracy())
+    
+     ### New version of DeepSpeech with improved scorer###
+    # clean
+    latest_deep_stats_first_improved = TextComp(
+        latest_deep_first_improved, original_first_deep)
+    print("[clean_deepspeech_first_2021_imp] Word Error Rate:" +
+          str(latest_deep_stats_first_improved.WER(debug)))
+    print("[clean_deepspeech_first_2021_imp] Accuracy:" +
+          str(latest_deep_stats_first_improved.Accuracy()))
+    clean_deep_accuracy_arr.append(latest_deep_stats_first_improved.Accuracy())
+    # cafe-low
+    latest_deep_stats_first_cafe_low_improved = TextComp(
+        latest_deep_first_cafe_low_improved, original_first_deep)
+    print("[cafe_low_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_cafe_low_improved.WER(debug)))
+    print("[cafe_low_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_cafe_low_improved.Accuracy()))
+    cafe_low_deep_accuracy_arr.append(
+        latest_deep_stats_first_cafe_low_improved.Accuracy())
+    # cafe-medium
+    latest_deep_stats_first_cafe_medium_improved = TextComp(
+        latest_deep_first_cafe_medium_improved, original_first_deep)
+    print("[cafe_medium_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_cafe_medium_improved.WER(debug)))
+    print("[cafe_medium_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_cafe_medium_improved.Accuracy()))
+    cafe_medium_deep_accuracy_arr.append(
+        latest_deep_stats_first_cafe_medium_improved.Accuracy())
+    # cafe-high
+    latest_deep_stats_first_cafe_high_improved = TextComp(
+        latest_deep_first_cafe_high_improved, original_first_deep)
+    print("[cafe_high_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_cafe_high_improved.WER(debug)))
+    print("[cafe_high_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_cafe_high_improved.Accuracy()))
+    cafe_high_deep_accuracy_arr.append(
+        latest_deep_stats_first_cafe_high_improved.Accuracy())
+    # people-low
+    latest_deep_stats_first_people_low_improved = TextComp(
+        latest_deep_first_people_low_improved, original_first_deep)
+    print("[people_low_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_people_low_improved.WER(debug)))
+    print("[people_low_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_people_low_improved.Accuracy()))
+    people_low_deep_accuracy_arr.append(
+        latest_deep_stats_first_people_low_improved.Accuracy())
+    # people-medium
+    latest_deep_stats_first_people_medium_improved = TextComp(
+        latest_deep_first_people_medium_improved, original_first_deep)
+    print("_people_medium_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_people_medium_improved.WER(debug)))
+    print("[people_medium_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_people_medium_improved.Accuracy()))
+    people_medium_deep_accuracy_arr.append(
+        latest_deep_stats_first_people_medium_improved.Accuracy())
+    # people-high
+    latest_deep_stats_first_people_high_improved = TextComp(
+        latest_deep_first_people_high_improved, original_first_deep)
+    print("[people_high_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_people_high_improved.WER(debug)))
+    print("[people_high_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_people_high_improved.Accuracy()))
+    people_high_deep_accuracy_arr.append(
+        latest_deep_stats_first_people_high_improved.Accuracy())
+    # sirens-low
+    latest_deep_stats_first_sirens_low_improved = TextComp(
+        latest_deep_first_sirens_low_improved, original_first_deep)
+    print("[sirens_low_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_sirens_low_improved.WER(debug)))
+    print("[sirens_low_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_sirens_low_improved.Accuracy()))
+    sirens_low_deep_accuracy_arr.append(
+        latest_deep_stats_first_sirens_low_improved.Accuracy())
+    # sirens-medium
+    latest_deep_stats_first_sirens_medium_improved = TextComp(
+        latest_deep_first_sirens_medium_improved, original_first_deep)
+    print("[sirens_medium_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_sirens_medium_improved.WER(debug)))
+    print("[sirens_medium_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_sirens_medium_improved.Accuracy()))
+    sirens_medium_deep_accuracy_arr.append(
+        latest_deep_stats_first_sirens_medium_improved.Accuracy())
+    # sirens-high
+    latest_deep_stats_first_sirens_high_improved = TextComp(
+        latest_deep_first_sirens_high_improved, original_first_deep)
+    print("[sirens_high_deepspeech_first_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_first_sirens_high_improved.WER(debug)))
+    print("[sirens_high_deepspeech_first_2021_improved] Accuracy:" +
+          str(latest_deep_stats_first_sirens_high_improved.Accuracy()))
+    sirens_high_deep_accuracy_arr.append(
+        latest_deep_stats_first_sirens_high_improved.Accuracy())
 
     # fifth file
     ### Old Version of DeepSpeech ###
@@ -982,6 +1073,97 @@ if __name__ == '__main__':
           str(latest_deep_stats_fifth_sirens_high_new.Accuracy()))
     sirens_high_deep_accuracy_arr.append(
         latest_deep_stats_fifth_sirens_high_new.Accuracy())
+    
+     ### New version of DeepSpeech with improved scorer###
+    # clean
+    latest_deep_stats_fifth_improved = TextComp(
+        latest_deep_fifth_improved, original_fifth_deep)
+    print("[clean_deepspeech_fifth_2021_imp] Word Error Rate:" +
+          str(latest_deep_stats_fifth_improved.WER(debug)))
+    print("[clean_deepspeech_fifth_2021_imp] Accuracy:" +
+          str(latest_deep_stats_fifth_improved.Accuracy()))
+    clean_deep_accuracy_arr.append(latest_deep_stats_fifth_improved.Accuracy())
+    # cafe-low
+    latest_deep_stats_fifth_cafe_low_improved = TextComp(
+        latest_deep_fifth_cafe_low_improved, original_fifth_deep)
+    print("[cafe_low_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_cafe_low_improved.WER(debug)))
+    print("[cafe_low_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_cafe_low_improved.Accuracy()))
+    cafe_low_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_cafe_low_improved.Accuracy())
+    # cafe-medium
+    latest_deep_stats_fifth_cafe_medium_improved = TextComp(
+        latest_deep_fifth_cafe_medium_improved, original_fifth_deep)
+    print("[cafe_medium_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_cafe_medium_improved.WER(debug)))
+    print("[cafe_medium_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_cafe_medium_improved.Accuracy()))
+    cafe_medium_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_cafe_medium_improved.Accuracy())
+    # cafe-high
+    latest_deep_stats_fifth_cafe_high_improved = TextComp(
+        latest_deep_fifth_cafe_high_improved, original_fifth_deep)
+    print("[cafe_high_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_cafe_high_improved.WER(debug)))
+    print("[cafe_high_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_cafe_high_improved.Accuracy()))
+    cafe_high_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_cafe_high_improved.Accuracy())
+    # people-low
+    latest_deep_stats_fifth_people_low_improved = TextComp(
+        latest_deep_fifth_people_low_improved, original_fifth_deep)
+    print("[people_low_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_people_low_improved.WER(debug)))
+    print("[people_low_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_people_low_improved.Accuracy()))
+    people_low_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_people_low_improved.Accuracy())
+    # people-medium
+    latest_deep_stats_fifth_people_medium_improved = TextComp(
+        latest_deep_fifth_people_medium_improved, original_fifth_deep)
+    print("_people_medium_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_people_medium_improved.WER(debug)))
+    print("[people_medium_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_people_medium_improved.Accuracy()))
+    people_medium_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_people_medium_improved.Accuracy())
+    # people-high
+    latest_deep_stats_fifth_people_high_improved = TextComp(
+        latest_deep_fifth_people_high_improved, original_fifth_deep)
+    print("[people_high_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_people_high_improved.WER(debug)))
+    print("[people_high_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_people_high_improved.Accuracy()))
+    people_high_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_people_high_improved.Accuracy())
+    # sirens-low
+    latest_deep_stats_fifth_sirens_low_improved = TextComp(
+        latest_deep_fifth_sirens_low_improved, original_fifth_deep)
+    print("[sirens_low_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_sirens_low_improved.WER(debug)))
+    print("[sirens_low_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_sirens_low_improved.Accuracy()))
+    sirens_low_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_sirens_low_improved.Accuracy())
+    # sirens-medium
+    latest_deep_stats_fifth_sirens_medium_improved = TextComp(
+        latest_deep_fifth_sirens_medium_improved, original_fifth_deep)
+    print("[sirens_medium_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_sirens_medium_improved.WER(debug)))
+    print("[sirens_medium_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_sirens_medium_improved.Accuracy()))
+    sirens_medium_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_sirens_medium_improved.Accuracy())
+    # sirens-high
+    latest_deep_stats_fifth_sirens_high_improved = TextComp(
+        latest_deep_fifth_sirens_high_improved, original_fifth_deep)
+    print("[sirens_high_deepspeech_fifth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_fifth_sirens_high_improved.WER(debug)))
+    print("[sirens_high_deepspeech_fifth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_fifth_sirens_high_improved.Accuracy()))
+    sirens_high_deep_accuracy_arr.append(
+        latest_deep_stats_fifth_sirens_high_improved.Accuracy())
 
     # sixth file
     ### Old Version of DeepSpeech ###
@@ -1165,6 +1347,97 @@ if __name__ == '__main__':
     sirens_high_deep_accuracy_arr.append(
         latest_deep_stats_sixth_sirens_high_new.Accuracy())
 
+     ### New version of DeepSpeech with improved scorer###
+    # clean
+    latest_deep_stats_sixth_improved = TextComp(
+        latest_deep_sixth_improved, original_sixth_deep)
+    print("[clean_deepspeech_sixth_2021_imp] Word Error Rate:" +
+          str(latest_deep_stats_sixth_improved.WER(debug)))
+    print("[clean_deepspeech_sixth_2021_imp] Accuracy:" +
+          str(latest_deep_stats_sixth_improved.Accuracy()))
+    clean_deep_accuracy_arr.append(latest_deep_stats_sixth_improved.Accuracy())
+    # cafe-low
+    latest_deep_stats_sixth_cafe_low_improved = TextComp(
+        latest_deep_sixth_cafe_low_improved, original_sixth_deep)
+    print("[cafe_low_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_cafe_low_improved.WER(debug)))
+    print("[cafe_low_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_cafe_low_improved.Accuracy()))
+    cafe_low_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_cafe_low_improved.Accuracy())
+    # cafe-medium
+    latest_deep_stats_sixth_cafe_medium_improved = TextComp(
+        latest_deep_sixth_cafe_medium_improved, original_sixth_deep)
+    print("[cafe_medium_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_cafe_medium_improved.WER(debug)))
+    print("[cafe_medium_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_cafe_medium_improved.Accuracy()))
+    cafe_medium_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_cafe_medium_improved.Accuracy())
+    # cafe-high
+    latest_deep_stats_sixth_cafe_high_improved = TextComp(
+        latest_deep_sixth_cafe_high_improved, original_sixth_deep)
+    print("[cafe_high_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_cafe_high_improved.WER(debug)))
+    print("[cafe_high_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_cafe_high_improved.Accuracy()))
+    cafe_high_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_cafe_high_improved.Accuracy())
+    # people-low
+    latest_deep_stats_sixth_people_low_improved = TextComp(
+        latest_deep_sixth_people_low_improved, original_sixth_deep)
+    print("[people_low_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_people_low_improved.WER(debug)))
+    print("[people_low_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_people_low_improved.Accuracy()))
+    people_low_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_people_low_improved.Accuracy())
+    # people-medium
+    latest_deep_stats_sixth_people_medium_improved = TextComp(
+        latest_deep_sixth_people_medium_improved, original_sixth_deep)
+    print("_people_medium_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_people_medium_improved.WER(debug)))
+    print("[people_medium_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_people_medium_improved.Accuracy()))
+    people_medium_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_people_medium_improved.Accuracy())
+    # people-high
+    latest_deep_stats_sixth_people_high_improved = TextComp(
+        latest_deep_sixth_people_high_improved, original_sixth_deep)
+    print("[people_high_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_people_high_improved.WER(debug)))
+    print("[people_high_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_people_high_improved.Accuracy()))
+    people_high_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_people_high_improved.Accuracy())
+    # sirens-low
+    latest_deep_stats_sixth_sirens_low_improved = TextComp(
+        latest_deep_sixth_sirens_low_improved, original_sixth_deep)
+    print("[sirens_low_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_sirens_low_improved.WER(debug)))
+    print("[sirens_low_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_sirens_low_improved.Accuracy()))
+    sirens_low_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_sirens_low_improved.Accuracy())
+    # sirens-medium
+    latest_deep_stats_sixth_sirens_medium_improved = TextComp(
+        latest_deep_sixth_sirens_medium_improved, original_sixth_deep)
+    print("[sirens_medium_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_sirens_medium_improved.WER(debug)))
+    print("[sirens_medium_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_sirens_medium_improved.Accuracy()))
+    sirens_medium_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_sirens_medium_improved.Accuracy())
+    # sirens-high
+    latest_deep_stats_sixth_sirens_high_improved = TextComp(
+        latest_deep_sixth_sirens_high_improved, original_sixth_deep)
+    print("[sirens_high_deepspeech_sixth_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_sixth_sirens_high_improved.WER(debug)))
+    print("[sirens_high_deepspeech_sixth_2021_improved] Accuracy:" +
+          str(latest_deep_stats_sixth_sirens_high_improved.Accuracy()))
+    sirens_high_deep_accuracy_arr.append(
+        latest_deep_stats_sixth_sirens_high_improved.Accuracy())
+    
     # seventh file
     ### Old Version of DeepSpeech ###
     # clean
@@ -1347,254 +1620,444 @@ if __name__ == '__main__':
           str(latest_deep_stats_seventh_sirens_high_new.Accuracy()))
     sirens_high_deep_accuracy_arr.append(
         latest_deep_stats_seventh_sirens_high_new.Accuracy())
+    
+     ### New version of DeepSpeech with improved scorer###
+    # clean
+    latest_deep_stats_seventh_improved = TextComp(
+        latest_deep_seventh_improved, original_seventh_deep)
+    print("[clean_deepspeech_seventh_2021_imp] Word Error Rate:" +
+          str(latest_deep_stats_seventh_improved.WER(debug)))
+    print("[clean_deepspeech_seventh_2021_imp] Accuracy:" +
+          str(latest_deep_stats_seventh_improved.Accuracy()))
+    clean_deep_accuracy_arr.append(latest_deep_stats_seventh_improved.Accuracy())
+    # cafe-low
+    latest_deep_stats_seventh_cafe_low_improved = TextComp(
+        latest_deep_seventh_cafe_low_improved, original_seventh_deep)
+    print("[cafe_low_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_cafe_low_improved.WER(debug)))
+    print("[cafe_low_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_cafe_low_improved.Accuracy()))
+    cafe_low_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_cafe_low_improved.Accuracy())
+    # cafe-medium
+    latest_deep_stats_seventh_cafe_medium_improved = TextComp(
+        latest_deep_seventh_cafe_medium_improved, original_seventh_deep)
+    print("[cafe_medium_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_cafe_medium_improved.WER(debug)))
+    print("[cafe_medium_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_cafe_medium_improved.Accuracy()))
+    cafe_medium_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_cafe_medium_improved.Accuracy())
+    # cafe-high
+    latest_deep_stats_seventh_cafe_high_improved = TextComp(
+        latest_deep_seventh_cafe_high_improved, original_seventh_deep)
+    print("[cafe_high_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_cafe_high_improved.WER(debug)))
+    print("[cafe_high_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_cafe_high_improved.Accuracy()))
+    cafe_high_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_cafe_high_improved.Accuracy())
+    # people-low
+    latest_deep_stats_seventh_people_low_improved = TextComp(
+        latest_deep_seventh_people_low_improved, original_seventh_deep)
+    print("[people_low_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_people_low_improved.WER(debug)))
+    print("[people_low_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_people_low_improved.Accuracy()))
+    people_low_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_people_low_improved.Accuracy())
+    # people-medium
+    latest_deep_stats_seventh_people_medium_improved = TextComp(
+        latest_deep_seventh_people_medium_improved, original_seventh_deep)
+    print("_people_medium_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_people_medium_improved.WER(debug)))
+    print("[people_medium_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_people_medium_improved.Accuracy()))
+    people_medium_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_people_medium_improved.Accuracy())
+    # people-high
+    latest_deep_stats_seventh_people_high_improved = TextComp(
+        latest_deep_seventh_people_high_improved, original_seventh_deep)
+    print("[people_high_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_people_high_improved.WER(debug)))
+    print("[people_high_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_people_high_improved.Accuracy()))
+    people_high_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_people_high_improved.Accuracy())
+    # sirens-low
+    latest_deep_stats_seventh_sirens_low_improved = TextComp(
+        latest_deep_seventh_sirens_low_improved, original_seventh_deep)
+    print("[sirens_low_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_sirens_low_improved.WER(debug)))
+    print("[sirens_low_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_sirens_low_improved.Accuracy()))
+    sirens_low_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_sirens_low_improved.Accuracy())
+    # sirens-medium
+    latest_deep_stats_seventh_sirens_medium_improved = TextComp(
+        latest_deep_seventh_sirens_medium_improved, original_seventh_deep)
+    print("[sirens_medium_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_sirens_medium_improved.WER(debug)))
+    print("[sirens_medium_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_sirens_medium_improved.Accuracy()))
+    sirens_medium_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_sirens_medium_improved.Accuracy())
+    # sirens-high
+    latest_deep_stats_seventh_sirens_high_improved = TextComp(
+        latest_deep_seventh_sirens_high_improved, original_seventh_deep)
+    print("[sirens_high_deepspeech_seventh_2021_improved] Word Error Rate:" +
+          str(latest_deep_stats_seventh_sirens_high_improved.WER(debug)))
+    print("[sirens_high_deepspeech_seventh_2021_improved] Accuracy:" +
+          str(latest_deep_stats_seventh_sirens_high_improved.Accuracy()))
+    sirens_high_deep_accuracy_arr.append(
+        latest_deep_stats_seventh_sirens_high_improved.Accuracy())
 
     # cafe data comparison arrays
     cafe_arr_first = []
     cafe_arr_first.append(clean_deep_accuracy_arr[0])
     cafe_arr_first.append(clean_deep_accuracy_arr[1])
+    cafe_arr_first.append(clean_deep_accuracy_arr[2])
     cafe_arr_first.append(cafe_low_deep_accuracy_arr[0])
     cafe_arr_first.append(cafe_low_deep_accuracy_arr[1])
+    cafe_arr_first.append(cafe_low_deep_accuracy_arr[2])
     cafe_arr_first.append(cafe_medium_deep_accuracy_arr[0])
     cafe_arr_first.append(cafe_medium_deep_accuracy_arr[1])
+    cafe_arr_first.append(cafe_medium_deep_accuracy_arr[2])
     cafe_arr_first.append(cafe_high_deep_accuracy_arr[0])
     cafe_arr_first.append(cafe_high_deep_accuracy_arr[1])
+    cafe_arr_first.append(cafe_high_deep_accuracy_arr[2])
 
     cafe_arr_second = []
-    cafe_arr_second.append(clean_deep_accuracy_arr[2])
     cafe_arr_second.append(clean_deep_accuracy_arr[3])
-    cafe_arr_second.append(cafe_low_deep_accuracy_arr[2])
+    cafe_arr_second.append(clean_deep_accuracy_arr[4])
+    cafe_arr_second.append(clean_deep_accuracy_arr[5])
     cafe_arr_second.append(cafe_low_deep_accuracy_arr[3])
-    cafe_arr_second.append(cafe_medium_deep_accuracy_arr[2])
+    cafe_arr_second.append(cafe_low_deep_accuracy_arr[4])
+    cafe_arr_second.append(cafe_low_deep_accuracy_arr[5])
     cafe_arr_second.append(cafe_medium_deep_accuracy_arr[3])
-    cafe_arr_second.append(cafe_high_deep_accuracy_arr[2])
+    cafe_arr_second.append(cafe_medium_deep_accuracy_arr[4])
+    cafe_arr_second.append(cafe_medium_deep_accuracy_arr[5])
     cafe_arr_second.append(cafe_high_deep_accuracy_arr[3])
+    cafe_arr_second.append(cafe_high_deep_accuracy_arr[4])
+    cafe_arr_second.append(cafe_high_deep_accuracy_arr[5])
 
     cafe_arr_third = []
-    cafe_arr_third.append(clean_deep_accuracy_arr[4])
-    cafe_arr_third.append(clean_deep_accuracy_arr[5])
-    cafe_arr_third.append(cafe_low_deep_accuracy_arr[4])
-    cafe_arr_third.append(cafe_low_deep_accuracy_arr[5])
-    cafe_arr_third.append(cafe_medium_deep_accuracy_arr[4])
-    cafe_arr_third.append(cafe_medium_deep_accuracy_arr[5])
-    cafe_arr_third.append(cafe_high_deep_accuracy_arr[4])
-    cafe_arr_third.append(cafe_high_deep_accuracy_arr[5])
+    cafe_arr_third.append(clean_deep_accuracy_arr[6])
+    cafe_arr_third.append(clean_deep_accuracy_arr[7])
+    cafe_arr_third.append(clean_deep_accuracy_arr[8])
+    cafe_arr_third.append(cafe_low_deep_accuracy_arr[6])
+    cafe_arr_third.append(cafe_low_deep_accuracy_arr[7])
+    cafe_arr_third.append(cafe_low_deep_accuracy_arr[8])
+    cafe_arr_third.append(cafe_medium_deep_accuracy_arr[6])
+    cafe_arr_third.append(cafe_medium_deep_accuracy_arr[7])
+    cafe_arr_third.append(cafe_medium_deep_accuracy_arr[8])
+    cafe_arr_third.append(cafe_high_deep_accuracy_arr[6])
+    cafe_arr_third.append(cafe_high_deep_accuracy_arr[7])
+    cafe_arr_third.append(cafe_high_deep_accuracy_arr[8])
 
     cafe_arr_fourth = []
-    cafe_arr_fourth.append(clean_deep_accuracy_arr[6])
-    cafe_arr_fourth.append(clean_deep_accuracy_arr[7])
-    cafe_arr_fourth.append(cafe_low_deep_accuracy_arr[6])
-    cafe_arr_fourth.append(cafe_low_deep_accuracy_arr[7])
-    cafe_arr_fourth.append(cafe_medium_deep_accuracy_arr[6])
-    cafe_arr_fourth.append(cafe_medium_deep_accuracy_arr[7])
-    cafe_arr_fourth.append(cafe_high_deep_accuracy_arr[6])
-    cafe_arr_fourth.append(cafe_high_deep_accuracy_arr[7])
+    cafe_arr_fourth.append(clean_deep_accuracy_arr[9])
+    cafe_arr_fourth.append(clean_deep_accuracy_arr[10])
+    cafe_arr_fourth.append(clean_deep_accuracy_arr[11])
+    cafe_arr_fourth.append(cafe_low_deep_accuracy_arr[9])
+    cafe_arr_fourth.append(cafe_low_deep_accuracy_arr[10])
+    cafe_arr_fourth.append(cafe_low_deep_accuracy_arr[11])
+    cafe_arr_fourth.append(cafe_medium_deep_accuracy_arr[9])
+    cafe_arr_fourth.append(cafe_medium_deep_accuracy_arr[10])
+    cafe_arr_fourth.append(cafe_medium_deep_accuracy_arr[11])
+    cafe_arr_fourth.append(cafe_high_deep_accuracy_arr[9])
+    cafe_arr_fourth.append(cafe_high_deep_accuracy_arr[10])
+    cafe_arr_fourth.append(cafe_high_deep_accuracy_arr[11])
 
     # people data comparison arrays
     people_arr_first = []
     people_arr_first.append(clean_deep_accuracy_arr[0])
     people_arr_first.append(clean_deep_accuracy_arr[1])
+    people_arr_first.append(clean_deep_accuracy_arr[2])
     people_arr_first.append(people_low_deep_accuracy_arr[0])
     people_arr_first.append(people_low_deep_accuracy_arr[1])
+    people_arr_first.append(people_low_deep_accuracy_arr[2])
     people_arr_first.append(people_medium_deep_accuracy_arr[0])
     people_arr_first.append(people_medium_deep_accuracy_arr[1])
+    people_arr_first.append(people_medium_deep_accuracy_arr[2])
     people_arr_first.append(people_high_deep_accuracy_arr[0])
     people_arr_first.append(people_high_deep_accuracy_arr[1])
+    people_arr_first.append(people_high_deep_accuracy_arr[2])
 
     people_arr_second = []
-    people_arr_second.append(clean_deep_accuracy_arr[2])
     people_arr_second.append(clean_deep_accuracy_arr[3])
-    people_arr_second.append(people_low_deep_accuracy_arr[2])
+    people_arr_second.append(clean_deep_accuracy_arr[4])
+    people_arr_second.append(clean_deep_accuracy_arr[5])
     people_arr_second.append(people_low_deep_accuracy_arr[3])
-    people_arr_second.append(people_medium_deep_accuracy_arr[2])
+    people_arr_second.append(people_low_deep_accuracy_arr[4])
+    people_arr_second.append(people_low_deep_accuracy_arr[5])
     people_arr_second.append(people_medium_deep_accuracy_arr[3])
-    people_arr_second.append(people_high_deep_accuracy_arr[2])
+    people_arr_second.append(people_medium_deep_accuracy_arr[4])
+    people_arr_second.append(people_medium_deep_accuracy_arr[5])
     people_arr_second.append(people_high_deep_accuracy_arr[3])
+    people_arr_second.append(people_high_deep_accuracy_arr[4])
+    people_arr_second.append(people_high_deep_accuracy_arr[5])
 
     people_arr_third = []
-    people_arr_third.append(clean_deep_accuracy_arr[4])
-    people_arr_third.append(clean_deep_accuracy_arr[5])
-    people_arr_third.append(people_low_deep_accuracy_arr[4])
-    people_arr_third.append(people_low_deep_accuracy_arr[5])
-    people_arr_third.append(people_medium_deep_accuracy_arr[4])
-    people_arr_third.append(people_medium_deep_accuracy_arr[5])
-    people_arr_third.append(people_high_deep_accuracy_arr[4])
-    people_arr_third.append(people_high_deep_accuracy_arr[5])
+    people_arr_third.append(clean_deep_accuracy_arr[6])
+    people_arr_third.append(clean_deep_accuracy_arr[7])
+    people_arr_third.append(clean_deep_accuracy_arr[8])
+    people_arr_third.append(people_low_deep_accuracy_arr[6])
+    people_arr_third.append(people_low_deep_accuracy_arr[7])
+    people_arr_third.append(people_low_deep_accuracy_arr[8])
+    people_arr_third.append(people_medium_deep_accuracy_arr[6])
+    people_arr_third.append(people_medium_deep_accuracy_arr[7])
+    people_arr_third.append(people_medium_deep_accuracy_arr[8])
+    people_arr_third.append(people_high_deep_accuracy_arr[6])
+    people_arr_third.append(people_high_deep_accuracy_arr[7])
+    people_arr_third.append(people_high_deep_accuracy_arr[8])
 
     people_arr_fourth = []
-    people_arr_fourth.append(clean_deep_accuracy_arr[6])
-    people_arr_fourth.append(clean_deep_accuracy_arr[7])
-    people_arr_fourth.append(people_low_deep_accuracy_arr[6])
-    people_arr_fourth.append(people_low_deep_accuracy_arr[7])
-    people_arr_fourth.append(people_medium_deep_accuracy_arr[6])
-    people_arr_fourth.append(people_medium_deep_accuracy_arr[7])
-    people_arr_fourth.append(people_high_deep_accuracy_arr[6])
-    people_arr_fourth.append(people_high_deep_accuracy_arr[7])
+    people_arr_fourth.append(clean_deep_accuracy_arr[9])
+    people_arr_fourth.append(clean_deep_accuracy_arr[10])
+    people_arr_fourth.append(clean_deep_accuracy_arr[11])
+    people_arr_fourth.append(people_low_deep_accuracy_arr[9])
+    people_arr_fourth.append(people_low_deep_accuracy_arr[10])
+    people_arr_fourth.append(people_low_deep_accuracy_arr[11])
+    people_arr_fourth.append(people_medium_deep_accuracy_arr[9])
+    people_arr_fourth.append(people_medium_deep_accuracy_arr[10])
+    people_arr_fourth.append(people_medium_deep_accuracy_arr[11])
+    people_arr_fourth.append(people_high_deep_accuracy_arr[9])
+    people_arr_fourth.append(people_high_deep_accuracy_arr[10])
+    people_arr_fourth.append(people_high_deep_accuracy_arr[11])
 
     # sirens data comparison arrays
     sirens_arr_first = []
     sirens_arr_first.append(clean_deep_accuracy_arr[0])
     sirens_arr_first.append(clean_deep_accuracy_arr[1])
+    sirens_arr_first.append(clean_deep_accuracy_arr[2])
     sirens_arr_first.append(sirens_low_deep_accuracy_arr[0])
     sirens_arr_first.append(sirens_low_deep_accuracy_arr[1])
+    sirens_arr_first.append(sirens_low_deep_accuracy_arr[2])
     sirens_arr_first.append(sirens_medium_deep_accuracy_arr[0])
     sirens_arr_first.append(sirens_medium_deep_accuracy_arr[1])
+    sirens_arr_first.append(sirens_medium_deep_accuracy_arr[2])
     sirens_arr_first.append(sirens_high_deep_accuracy_arr[0])
     sirens_arr_first.append(sirens_high_deep_accuracy_arr[1])
+    sirens_arr_first.append(sirens_high_deep_accuracy_arr[2])
 
     sirens_arr_second = []
-    sirens_arr_second.append(clean_deep_accuracy_arr[2])
     sirens_arr_second.append(clean_deep_accuracy_arr[3])
-    sirens_arr_second.append(sirens_low_deep_accuracy_arr[2])
+    sirens_arr_second.append(clean_deep_accuracy_arr[4])
+    sirens_arr_second.append(clean_deep_accuracy_arr[5])
     sirens_arr_second.append(sirens_low_deep_accuracy_arr[3])
-    sirens_arr_second.append(sirens_medium_deep_accuracy_arr[2])
+    sirens_arr_second.append(sirens_low_deep_accuracy_arr[4])
+    sirens_arr_second.append(sirens_low_deep_accuracy_arr[5])
     sirens_arr_second.append(sirens_medium_deep_accuracy_arr[3])
-    sirens_arr_second.append(sirens_high_deep_accuracy_arr[2])
+    sirens_arr_second.append(sirens_medium_deep_accuracy_arr[4])
+    sirens_arr_second.append(sirens_medium_deep_accuracy_arr[5])
     sirens_arr_second.append(sirens_high_deep_accuracy_arr[3])
+    sirens_arr_second.append(sirens_high_deep_accuracy_arr[4])
+    sirens_arr_second.append(sirens_high_deep_accuracy_arr[5])
 
     sirens_arr_third = []
-    sirens_arr_third.append(clean_deep_accuracy_arr[4])
-    sirens_arr_third.append(clean_deep_accuracy_arr[5])
-    sirens_arr_third.append(sirens_low_deep_accuracy_arr[4])
-    sirens_arr_third.append(sirens_low_deep_accuracy_arr[5])
-    sirens_arr_third.append(sirens_medium_deep_accuracy_arr[4])
-    sirens_arr_third.append(sirens_medium_deep_accuracy_arr[5])
-    sirens_arr_third.append(sirens_high_deep_accuracy_arr[4])
-    sirens_arr_third.append(sirens_high_deep_accuracy_arr[5])
+    sirens_arr_third.append(clean_deep_accuracy_arr[6])
+    sirens_arr_third.append(clean_deep_accuracy_arr[7])
+    sirens_arr_third.append(clean_deep_accuracy_arr[8])
+    sirens_arr_third.append(sirens_low_deep_accuracy_arr[6])
+    sirens_arr_third.append(sirens_low_deep_accuracy_arr[7])
+    sirens_arr_third.append(sirens_low_deep_accuracy_arr[8])
+    sirens_arr_third.append(sirens_medium_deep_accuracy_arr[6])
+    sirens_arr_third.append(sirens_medium_deep_accuracy_arr[7])
+    sirens_arr_third.append(sirens_medium_deep_accuracy_arr[8])
+    sirens_arr_third.append(sirens_high_deep_accuracy_arr[6])
+    sirens_arr_third.append(sirens_high_deep_accuracy_arr[7])
+    sirens_arr_third.append(sirens_high_deep_accuracy_arr[8])
 
     sirens_arr_fourth = []
-    sirens_arr_fourth.append(clean_deep_accuracy_arr[6])
-    sirens_arr_fourth.append(clean_deep_accuracy_arr[7])
-    sirens_arr_fourth.append(sirens_low_deep_accuracy_arr[6])
-    sirens_arr_fourth.append(sirens_low_deep_accuracy_arr[7])
-    sirens_arr_fourth.append(sirens_medium_deep_accuracy_arr[6])
-    sirens_arr_fourth.append(sirens_medium_deep_accuracy_arr[7])
-    sirens_arr_fourth.append(sirens_high_deep_accuracy_arr[6])
-    sirens_arr_fourth.append(sirens_high_deep_accuracy_arr[7])
+    sirens_arr_fourth.append(clean_deep_accuracy_arr[9])
+    sirens_arr_fourth.append(clean_deep_accuracy_arr[10])
+    sirens_arr_fourth.append(clean_deep_accuracy_arr[11])
+    sirens_arr_fourth.append(sirens_low_deep_accuracy_arr[9])
+    sirens_arr_fourth.append(sirens_low_deep_accuracy_arr[10])
+    sirens_arr_fourth.append(sirens_low_deep_accuracy_arr[11])
+    sirens_arr_fourth.append(sirens_medium_deep_accuracy_arr[9])
+    sirens_arr_fourth.append(sirens_medium_deep_accuracy_arr[10])
+    sirens_arr_fourth.append(sirens_medium_deep_accuracy_arr[11])
+    sirens_arr_fourth.append(sirens_high_deep_accuracy_arr[9])
+    sirens_arr_fourth.append(sirens_high_deep_accuracy_arr[10])
+    sirens_arr_fourth.append(sirens_high_deep_accuracy_arr[11])
+
     # data visualization
     # #labels for average graph
     labels_ave = ('Cafeteria', 'People Talking', 'Sirens')
     # labels for three sub graphs
-    labels = ('Clean (Old Mozilla)', 'Clean (New Mozilla)', 'Low Noise (Old Mozilla)', 'Low Noise (New Mozilla)',
-              'Medium Noise (Old Mozilla)', 'Medium Noise (New Mozilla)', 'High Noise (Old Mozilla)', 'High Noise (New Mozilla)')
+    labels = ('Clean (Old Mozilla)', 'Clean (New Mozilla)', 'Clean (New Scorer)', 'Low Noise (Old Mozilla)', 'Low Noise (New Mozilla)', 'Low Noise (New Scorer)',
+              'Medium Noise (Old Mozilla)', 'Medium Noise (New Mozilla)', 'Medium Noise (New Scorer)', 'High Noise (Old Mozilla)', 'High Noise (New Mozilla)', 'High Noise (New Scorer)')
 
     labels_compare = ('Clean', 'Low Noise', 'Medium Noise', 'High Noise')
 
     # average accuracy under different noise arrays
     # want to look at the average for the old and new versions
 
+    # variable for number of softwares being tested
+    soft = 3
+
     clean_ave_old = 0
     clean_ave_new = 0
-    for val in clean_deep_accuracy_arr:
-        if (val % 2) == 0:
-            clean_ave_old += val
+    clean_ave_improved = 0
+    for val in range(len(clean_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            clean_ave_old += clean_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            clean_ave_new += clean_deep_accuracy_arr[val]
         else:
-            clean_ave_new += val
-    clean_ave_old = clean_ave_old/(len(clean_deep_accuracy_arr)/2)
-    clean_ave_new = clean_ave_new/(len(clean_deep_accuracy_arr)/2)
+            clean_ave_improved += clean_deep_accuracy_arr[val]
+    clean_ave_old = clean_ave_old/(len(clean_deep_accuracy_arr)/soft)
+    clean_ave_new = clean_ave_new/(len(clean_deep_accuracy_arr)/soft)
+    clean_ave_improved = clean_ave_improved/(len(clean_deep_accuracy_arr)/soft)
 
     cafe_low_ave_old = 0
     cafe_low_ave_new = 0
-    for val in cafe_low_deep_accuracy_arr:
-        if (val % 2) == 0:
-            cafe_low_ave_old += val
+    cafe_low_ave_improved = 0
+    for val in range(len(cafe_low_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            cafe_low_ave_old += cafe_low_deep_accuracy_arr[val]
+        elif (val %soft) == 1:
+            cafe_low_ave_new += cafe_low_deep_accuracy_arr[val]
         else:
-            cafe_low_ave_new += val
-    cafe_low_ave_old = cafe_low_ave_old/(len(cafe_low_deep_accuracy_arr)/2)
-    cafe_low_ave_new = cafe_low_ave_new/(len(cafe_low_deep_accuracy_arr)/2)
+            cafe_low_ave_improved += cafe_low_deep_accuracy_arr[val]
+    cafe_low_ave_old = cafe_low_ave_old/(len(cafe_low_deep_accuracy_arr)/soft)
+    cafe_low_ave_new = cafe_low_ave_new/(len(cafe_low_deep_accuracy_arr)/soft)
+    cafe_low_ave_improved = cafe_low_ave_improved/(len(cafe_low_deep_accuracy_arr)/soft)
 
     people_low_ave_old = 0
     people_low_ave_new = 0
-    for val in people_low_deep_accuracy_arr:
-        if (val % 2) == 0:
-            people_low_ave_old += val
+    people_low_ave_improved = 0
+    for val in range(len(people_low_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            people_low_ave_old += people_low_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            people_low_ave_new += people_low_deep_accuracy_arr[val]
         else:
-            people_low_ave_new += val
+            people_low_ave_improved += val
     people_low_ave_old = people_low_ave_old / \
-        (len(people_low_deep_accuracy_arr)/2)
+        (len(people_low_deep_accuracy_arr)/soft)
     people_low_ave_new = people_low_ave_new / \
-        (len(people_low_deep_accuracy_arr)/2)
+        (len(people_low_deep_accuracy_arr)/soft)
+    people_low_ave_improved = people_low_ave_improved / \
+        (len(people_low_deep_accuracy_arr)/soft)
 
     sirens_low_ave_old = 0
     sirens_low_ave_new = 0
-    for val in sirens_low_deep_accuracy_arr:
-        if (val % 2) == 0:
-            sirens_low_ave_old += val
+    sirens_low_ave_improved = 0
+    for val in range(len(sirens_low_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            sirens_low_ave_old += sirens_low_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            sirens_low_ave_new += sirens_low_deep_accuracy_arr[val]
         else:
-            sirens_low_ave_new += val
+            sirens_low_ave_improved += sirens_low_deep_accuracy_arr[val]
     sirens_low_ave_old = sirens_low_ave_old / \
-        (len(sirens_low_deep_accuracy_arr)/2)
+        (len(sirens_low_deep_accuracy_arr)/soft)
     sirens_low_ave_new = sirens_low_ave_new / \
-        (len(sirens_low_deep_accuracy_arr)/2)
+        (len(sirens_low_deep_accuracy_arr)/soft)
+    sirens_low_ave_improved = sirens_low_ave_improved / \
+        (len(sirens_low_deep_accuracy_arr)/soft)
 
     cafe_medium_ave_old = 0
     cafe_medium_ave_new = 0
-    for val in cafe_medium_deep_accuracy_arr:
-        if (val % 2) == 0:
-            cafe_medium_ave_old += val
+    cafe_medium_ave_improved = 0
+    for val in range(len(cafe_medium_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            cafe_medium_ave_old += cafe_medium_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            cafe_medium_ave_new += cafe_medium_deep_accuracy_arr[val]
         else:
-            cafe_medium_ave_new += val
+            cafe_medium_ave_improved += cafe_medium_deep_accuracy_arr[val]
     cafe_medium_ave_old = cafe_medium_ave_old / \
-        (len(cafe_medium_deep_accuracy_arr)/2)
+        (len(cafe_medium_deep_accuracy_arr)/soft)
     cafe_medium_ave_new = cafe_medium_ave_new / \
-        (len(cafe_medium_deep_accuracy_arr)/2)
+        (len(cafe_medium_deep_accuracy_arr)/soft)
+    cafe_medium_ave_improved = cafe_medium_ave_improved / \
+        (len(cafe_medium_deep_accuracy_arr)/soft)
 
     people_medium_ave_old = 0
     people_medium_ave_new = 0
-    for val in people_medium_deep_accuracy_arr:
-        if (val % 2) == 0:
-            people_medium_ave_old += val
+    people_medium_ave_improved = 0
+    for val in range(len(people_medium_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            people_medium_ave_old += people_medium_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            people_medium_ave_new += people_medium_deep_accuracy_arr[val]
         else:
-            people_medium_ave_new += val
+            people_medium_ave_improved += people_medium_deep_accuracy_arr[val]
     people_medium_ave_old = people_medium_ave_old / \
-        (len(people_medium_deep_accuracy_arr)/2)
+        (len(people_medium_deep_accuracy_arr)/soft)
     people_medium_ave_new = people_medium_ave_new / \
-        (len(people_medium_deep_accuracy_arr)/2)
+        (len(people_medium_deep_accuracy_arr)/soft)
+    people_medium_ave_improved = people_medium_ave_improved / \
+        (len(people_medium_deep_accuracy_arr)/soft)
 
     sirens_medium_ave_old = 0
     sirens_medium_ave_new = 0
-    for val in sirens_medium_deep_accuracy_arr:
-        if (val % 2) == 0:
-            sirens_medium_ave_old += val
+    sirens_medium_ave_improved = 0
+    for val in range(len(sirens_medium_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            sirens_medium_ave_old += sirens_medium_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            sirens_medium_ave_new += sirens_medium_deep_accuracy_arr[val]
         else:
-            sirens_medium_ave_new += val
+            sirens_medium_ave_improved += sirens_medium_deep_accuracy_arr[val]
     sirens_medium_ave_old = sirens_medium_ave_old / \
-        (len(sirens_medium_deep_accuracy_arr)/2)
+        (len(sirens_medium_deep_accuracy_arr)/soft)
     sirens_medium_ave_new = sirens_medium_ave_new / \
-        (len(sirens_medium_deep_accuracy_arr)/2)
+        (len(sirens_medium_deep_accuracy_arr)/soft)
+    sirens_medium_ave_improved = sirens_medium_ave_improved / \
+        (len(sirens_medium_deep_accuracy_arr)/soft)
 
     cafe_high_ave_old = 0
     cafe_high_ave_new = 0
-    for val in cafe_high_deep_accuracy_arr:
-        if (val % 2) == 0:
-            cafe_high_ave_old += val
+    cafe_high_ave_improved = 0
+    for val in range(len(cafe_high_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            cafe_high_ave_old += cafe_high_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            cafe_high_ave_new += cafe_high_deep_accuracy_arr[val]
         else:
-            cafe_high_ave_new += val
-    cafe_high_ave_old = cafe_high_ave_old/(len(cafe_high_deep_accuracy_arr)/2)
-    cafe_high_ave_new = cafe_high_ave_new/(len(cafe_high_deep_accuracy_arr)/2)
+            cafe_high_ave_improved += cafe_high_deep_accuracy_arr[val]
+    cafe_high_ave_old = cafe_high_ave_old/(len(cafe_high_deep_accuracy_arr)/soft)
+    cafe_high_ave_new = cafe_high_ave_new/(len(cafe_high_deep_accuracy_arr)/soft)
+    cafe_high_ave_improved = cafe_high_ave_improved/(len(cafe_high_deep_accuracy_arr)/soft)
 
     people_high_ave_old = 0
     people_high_ave_new = 0
-    for val in people_high_deep_accuracy_arr:
-        if (val % 2) == 0:
-            people_high_ave_old += val
+    people_high_ave_improved = 0
+    for val in range(len(people_high_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            people_high_ave_old += people_high_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            people_high_ave_new += people_high_deep_accuracy_arr[val]
         else:
-            people_high_ave_new += val
+            people_high_ave_improved += people_high_deep_accuracy_arr[val]
     people_high_ave_old = people_high_ave_old / \
-        (len(people_high_deep_accuracy_arr)/2)
+        (len(people_high_deep_accuracy_arr)/soft)
     people_high_ave_new = people_high_ave_new / \
-        (len(people_high_deep_accuracy_arr)/2)
+        (len(people_high_deep_accuracy_arr)/soft)
+    people_high_ave_improved = people_high_ave_improved / \
+        (len(people_high_deep_accuracy_arr)/soft)
 
     sirens_high_ave_old = 0
     sirens_high_ave_new = 0
-    for val in sirens_high_deep_accuracy_arr:
-        if (val % 2) == 0:
-            sirens_high_ave_old += val
+    sirens_high_ave_improved = 0
+    for val in range(len(sirens_high_deep_accuracy_arr)):
+        if (val % soft) == 0:
+            sirens_high_ave_old += sirens_high_deep_accuracy_arr[val]
+        elif (val % soft) == 1:
+            sirens_high_ave_new += sirens_high_deep_accuracy_arr[val]
         else:
-            sirens_high_ave_new += val
+            sirens_high_ave_improved += sirens_high_deep_accuracy_arr[val]
     sirens_high_ave_old = sirens_high_ave_old / \
-        (len(sirens_high_deep_accuracy_arr)/2)
+        (len(sirens_high_deep_accuracy_arr)/soft)
     sirens_high_ave_new = sirens_high_ave_new / \
-        (len(sirens_high_deep_accuracy_arr)/2)
+        (len(sirens_high_deep_accuracy_arr)/soft)
+    sirens_high_ave_improved = sirens_high_ave_improved / \
+        (len(sirens_high_deep_accuracy_arr)/soft)
 
     clean_arr_old = []
     clean_arr_old.append(clean_ave_old)
@@ -1606,6 +2069,11 @@ if __name__ == '__main__':
     clean_arr_new.append(clean_ave_new)
     clean_arr_new.append(clean_ave_new)
 
+    clean_arr_improved = []
+    clean_arr_improved.append(clean_ave_improved)
+    clean_arr_improved.append(clean_ave_improved)
+    clean_arr_improved.append(clean_ave_improved)
+
     low_arr_old = []
     low_arr_old.append(cafe_low_ave_old)
     low_arr_old.append(people_low_ave_old)
@@ -1615,6 +2083,11 @@ if __name__ == '__main__':
     low_arr_new.append(cafe_low_ave_new)
     low_arr_new.append(people_low_ave_new)
     low_arr_new.append(sirens_low_ave_new)
+
+    low_arr_improved = []
+    low_arr_improved.append(cafe_low_ave_improved)
+    low_arr_improved.append(people_low_ave_improved)
+    low_arr_improved.append(sirens_low_ave_improved)
 
     medium_arr_old = []
     medium_arr_old.append(cafe_medium_ave_old)
@@ -1626,6 +2099,11 @@ if __name__ == '__main__':
     medium_arr_new.append(people_medium_ave_new)
     medium_arr_new.append(sirens_medium_ave_new)
 
+    medium_arr_improved = []
+    medium_arr_improved.append(cafe_medium_ave_improved)
+    medium_arr_improved.append(people_medium_ave_improved)
+    medium_arr_improved.append(sirens_medium_ave_improved)
+
     high_arr_old = []
     high_arr_old.append(cafe_high_ave_old)
     high_arr_old.append(people_high_ave_old)
@@ -1636,35 +2114,47 @@ if __name__ == '__main__':
     high_arr_new.append(people_high_ave_new)
     high_arr_new.append(sirens_high_ave_new)
 
+    high_arr_improved = []
+    high_arr_improved.append(cafe_high_ave_improved)
+    high_arr_improved.append(people_high_ave_improved)
+    high_arr_improved.append(sirens_high_ave_improved)
+
     # Comparing the different version of DeepSpeech
 
     deep_speech_per_old = []
     deep_speech_per_new = []
+    deep_speech_per_improved = []
 
     # low ave for both deepspeech versions
     deep_low_sum_old = cafe_low_ave_old + people_low_ave_old + sirens_low_ave_old
     deep_low_sum_new = cafe_low_ave_new + people_low_ave_new + sirens_low_ave_new
+    deep_low_sum_improved = cafe_low_ave_improved + people_low_ave_improved + sirens_low_ave_improved
 
     deep_low_ave_old = deep_low_sum_old / 3
     deep_low_ave_new = deep_low_sum_new / 3
+    deep_low_ave_improved = deep_low_sum_improved / 3
 
     # medium ave for both google and deep
     deep_medium_sum_old = cafe_medium_ave_old + \
         people_medium_ave_old + sirens_medium_ave_old
     deep_medium_sum_new = cafe_medium_ave_new + \
         people_medium_ave_new + sirens_medium_ave_new
+    deep_medium_sum_improved = cafe_medium_ave_improved + people_medium_ave_improved + sirens_medium_ave_improved
 
     deep_medium_ave_old = deep_medium_sum_old / 3
     deep_medium_ave_new = deep_medium_sum_new / 3
+    deep_medium_ave_improved = deep_medium_sum_improved / 3
 
     # high ave for both google and deep
     deep_high_sum_old = cafe_high_ave_old + \
         people_high_ave_old + sirens_high_ave_old
     deep_high_sum_new = cafe_high_ave_new + \
         people_high_ave_new + sirens_high_ave_new
+    deep_high_sum_improved = cafe_high_ave_improved + people_high_ave_improved + sirens_high_ave_improved
 
     deep_high_ave_old = deep_high_sum_old / 3
     deep_high_ave_new = deep_high_sum_new / 3
+    deep_high_ave_improved = deep_high_sum_improved/ 3
 
     deep_speech_per_old.append(clean_ave_old)
     deep_speech_per_old.append(deep_low_ave_old)
@@ -1675,6 +2165,11 @@ if __name__ == '__main__':
     deep_speech_per_new.append(deep_low_ave_new)
     deep_speech_per_new.append(deep_medium_ave_new)
     deep_speech_per_new.append(deep_high_ave_new)
+
+    deep_speech_per_improved.append(clean_ave_improved)
+    deep_speech_per_improved.append(deep_low_ave_improved)
+    deep_speech_per_improved.append(deep_medium_ave_improved)
+    deep_speech_per_improved.append(deep_high_ave_improved)
 
     # visualization for cafeteria
     df = pd.DataFrame(np.c_[cafe_arr_first, cafe_arr_second, cafe_arr_third, cafe_arr_fourth],
