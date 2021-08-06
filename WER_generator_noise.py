@@ -1887,8 +1887,8 @@ if __name__ == '__main__':
     # #labels for average graph
     labels_ave = ('Cafeteria', 'People Talking', 'Sirens')
     # labels for three sub graphs
-    labels = ('Clean (Old Mozilla)', 'Clean (New Mozilla)', 'Clean (New Scorer)', 'Low Noise (Old Mozilla)', 'Low Noise (New Mozilla)', 'Low Noise (New Scorer)',
-              'Medium Noise (Old Mozilla)', 'Medium Noise (New Mozilla)', 'Medium Noise (New Scorer)', 'High Noise (Old Mozilla)', 'High Noise (New Mozilla)', 'High Noise (New Scorer)')
+    labels = ('Clean Old', 'Clean New', 'Clean (New Scorer)', 'Low Noise Old', 'Low Noise New', 'Low Noise (New Scorer)',
+              'Medium Noise Old', 'Medium Noise New', 'Medium Noise (New Scorer)', 'High Noise Old', 'High Noise New', 'High Noise (New Scorer)')
 
     labels_compare = ('Clean', 'Low Noise', 'Medium Noise', 'High Noise')
 
